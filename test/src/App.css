@@ -1,0 +1,40 @@
+.App {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+html {
+  background-color: rgb(227, 229, 228);
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+}
+
+/* Table style override */
+.table__table {
+  background-color: white;
+  border-radius: 6px;
+}
+.table__column {
+  padding: 10px 8px;
+}
+
+.table__export-dropdown-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: purple;
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+}
+.table__export-dropdown-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: purple;
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
+}
+
+.table__export-buttons-wrapper {
+  background-color: white;
+  border: 1px solid #ccc;
+}

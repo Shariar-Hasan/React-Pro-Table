@@ -1,0 +1,66 @@
+@import "./row-styles.css";
+@import "./column-styles.css";
+@import "./export-styles.css";
+@import "./table-top-styles.css";
+@import "./table-bottom-styles.css";
+
+* {
+  box-sizing: border-box;
+}
+/* Table Wrapper */
+.table__body {
+  width: 100%;
+}
+.table__wrpper {
+  width: 100%;
+}
+.table__wrpper.table__responsive {
+  max-width: 100vw;
+  overflow-x: auto;
+  /* padding: 20px; */
+}
+
+.table__table {
+  display: table;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+/* Table Header */
+.table__header {
+  font-weight: bold;
+}
+/* Table checkbox section */
+.table__checkbox {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #747474;
+}
+.table__checkbox.checked {
+  border: 1px solid transparent;
+  transform: rotate(405deg);
+}
+
+.table__checkbox::before,
+.table__checkbox::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: #747474;
+  transition: all 0.3s ease-in-out;
+}
+.table__checkbox.checked::before {
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+}
+.table__checkbox.checked::after {
+  top: 0;
+  height: 100%;
+  width: 2px;
+}
