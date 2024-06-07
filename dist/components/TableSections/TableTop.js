@@ -1,0 +1,16 @@
+import React from "react";
+import ExportButtonList from "../ExportSection/ExportButtonList";
+import { useTableProps } from "../../hooksAndContexts/TableContext";
+import ColumnSettings from "../SharedComponents/ColumnSettings";
+var TableTop = function () {
+    var _a = useTableProps(), exportOptions = _a.exportOptions, selectedRows = _a.selectedRows, headers = _a.headers, columnSettings = _a.columnSettings;
+    return (React.createElement("div", { className: "table__top" },
+        React.createElement("div", { className: "table__top-left" }, exportOptions && exportOptions.length > 0 && React.createElement(ExportButtonList, null)),
+        React.createElement("div", { className: "table__top-middle" }),
+        React.createElement("div", { className: "table__top-right" },
+            React.createElement("div", null, selectedRows &&
+                selectedRows.length > 0 &&
+                selectedRows.length + " rows selected"),
+            columnSettings && React.createElement(ColumnSettings, null))));
+};
+export default TableTop;

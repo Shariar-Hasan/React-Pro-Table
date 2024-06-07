@@ -1,17 +1,23 @@
-.table__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
+@import "./row-styles.css";
+@import "./column-styles.css";
+@import "./export-styles.css";
+@import "./table-top-styles.css";
+@import "./table-bottom-styles.css";
 
+* {
+  box-sizing: border-box;
+}
 /* Table Wrapper */
+.table__body {
+  width: 100%;
+}
 .table__wrpper {
+  width: 100%;
 }
 .table__wrpper.table__responsive {
-  width: 100vw;
+  max-width: 100vw;
   overflow-x: auto;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .table__table {
@@ -20,58 +26,41 @@
   border: 1px solid #ddd;
 }
 
-.table__row {
-  display: table-row;
-  border-bottom: 1px solid #ddd;
-}
 /* Table Header */
 .table__header {
   font-weight: bold;
 }
-/* Table border section */
-.table__row.bordered {
+/* Table checkbox section */
+.table__checkbox {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
   position: relative;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #747474;
 }
-.table__row.bordered::after {
+.table__checkbox.checked {
+  border: 1px solid transparent;
+  transform: rotate(405deg);
+}
+
+.table__checkbox::before,
+.table__checkbox::after {
   content: "";
   position: absolute;
-  width: 100%;
-  border-bottom: 1px solid #ddd;
-  top: 100%;
-  left: 0;
+  right: 0;
+  background-color: #747474;
+  transition: all 0.3s ease-in-out;
 }
-
-/* Table Column section */
-.table__column {
-  display: table-cell;
-  padding: 5px;
+.table__checkbox.checked::before {
+  bottom: 0;
+  width: 50%;
+  height: 2px;
 }
-
-/* table Export section */
-
-.table__export-dropdown-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.table__export-dropdown-button {
-  cursor: pointer;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-}
-.table__export-buttons-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 5px;
-}
-.table__export-buttons-wrapper button {
-  border: none;
-  cursor: pointer;
-}
-.table__export-buttons-wrapper button:hover {
-  background-color: #dddddd5c;
+.table__checkbox.checked::after {
+  top: 0;
+  height: 100%;
+  width: 2px;
 }

@@ -1,0 +1,57 @@
+.table__top,
+.table__top-right,
+.table__top-left,
+.table__top-middle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.table__top-right{
+  
+}
+.table__settings-button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
+}
+.table__settings-menu {
+  position: absolute;
+  font-size: small;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  border: 1px solid #ddd;
+  transform: translateY(-30px);
+  max-width: max-content;
+  width: fit-content;
+  padding: 10px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.table__settings-menu label {
+ display: block;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 5px;
+ cursor: pointer;
+}
+.table__settings-button:focus-within .table__settings-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

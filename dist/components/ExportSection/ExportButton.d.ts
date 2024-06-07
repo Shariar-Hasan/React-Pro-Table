@@ -1,9 +1,7 @@
 import React from "react";
-import { HeaderSingleItemType, TableSingleExportType } from "../../type/types";
-declare const ExportButton: ({ type, headers, dataList, fileName, }: {
+import { TableSingleExportType } from "../../type/types";
+declare const ExportButton: ({ type, fileName, }: {
     type: TableSingleExportType;
-    headers: HeaderSingleItemType[];
-    dataList: any;
     fileName?: string;
 }) => React.JSX.Element;
 export default ExportButton;

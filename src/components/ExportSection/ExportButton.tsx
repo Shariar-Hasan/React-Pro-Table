@@ -1,18 +1,20 @@
-import React from "react";
-import { HeaderSingleItemType, TableSingleExportType } from "../../type/types";
+import React, { useContext } from "react";
+import {
+  HeaderSingleItemType,
+  TableContextProps,
+  TableSingleExportType,
+} from "../../type/types";
 import { exportAsCsv, exportAsJson } from "../../helper/mainHelpers";
+import { useTableProps } from "../../hooksAndContexts/TableContext";
 
 const ExportButton = ({
   type,
-  headers,
-  dataList,
   fileName,
-}: {
+}: { 
   type: TableSingleExportType;
-  headers: HeaderSingleItemType[];
-  dataList: any;
   fileName?: string;
 }) => {
+  const { dataList, headers, exportOptions } = useTableProps();
   const getButtonText = () => {
     switch (type) {
       case "csv":
@@ -26,9 +28,13 @@ const ExportButton = ({
   const getButtonHandleClick = () => {
     switch (type) {
       case "csv":
-        return exportAsCsv(headers, dataList, fileName);
+        return exportAsCsv(
+          headers as HeaderSingleItemType[],
+          dataList as any[],
+          fileName
+        );
       case "json":
-        return exportAsJson(dataList, fileName);
+        return exportAsJson(dataList as any[], fileName);
       default:
         throw new Error("Incorrect export type");
     }

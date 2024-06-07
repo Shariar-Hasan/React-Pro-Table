@@ -1,7 +1,9 @@
 import React from "react";
 import { exportAsCsv, exportAsJson } from "../../helper/mainHelpers";
+import { useTableProps } from "../../hooksAndContexts/TableContext";
 var ExportButton = function (_a) {
-    var type = _a.type, headers = _a.headers, dataList = _a.dataList, fileName = _a.fileName;
+    var type = _a.type, fileName = _a.fileName;
+    var _b = useTableProps(), dataList = _b.dataList, headers = _b.headers, exportOptions = _b.exportOptions;
     var getButtonText = function () {
         switch (type) {
             case "csv":

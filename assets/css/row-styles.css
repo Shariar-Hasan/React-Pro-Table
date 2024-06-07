@@ -1,0 +1,41 @@
+
+* {
+  box-sizing: border-box;
+}
+/* Table Row Styles */
+.table__row {
+  display: table-row;
+  border-bottom: 1px solid #ddd;
+}
+.table__row.table__header {
+  border: 1px solid #e70000;
+}
+.table__row.bordered {
+  position: relative;
+}
+.table__row.selectable {
+  cursor: pointer;
+}
+.table__row.selectable.selected {
+  transform: scale(0.999);
+}
+.table__row.selectable.selected::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid rgb(62, 62, 62);
+}
+.table__row.hoverable:hover {
+  backdrop-filter: brightness(0.93);
+}
+.table__row.bordered::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 100%;
+  left: 0;
+}

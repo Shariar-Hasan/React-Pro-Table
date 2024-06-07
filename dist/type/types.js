@@ -1,2 +1,1 @@
-// Common Types
 export {};
