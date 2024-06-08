@@ -31,6 +31,7 @@ var TableContextProvider = function (_a) {
     onFiltering = _b.onFiltering, onRowExporting = _b.onRowExporting, onRowHover = _b.onRowHover, onRowSelect = _b.onRowSelect, onRowClick = _b.onRowClick, onSingleRowSelect = _b.onSingleRowSelect, onSortClick = _b.onSortClick;
     var _c = useState([]), selectedRows = _c[0], setSelectedRows = _c[1];
     var _d = useState(headers), visibleColumns = _d[0], setVisibleColumns = _d[1];
+    // function customize
     var isSelected = function (row) {
         return selectedRows
             .map(function (r) { return r[uniqueKeyAccessor]; })
@@ -61,16 +62,12 @@ var TableContextProvider = function (_a) {
         }
     };
     var handleSelectAllRow = function () {
-        if (selectedRows.length >= dataList.length) {
+        if (selectedRows.length >= dataList.length && dataList.length > 0) {
             setSelectedRows([]);
             onRowSelect && onRowSelect([]);
         }
         else {
             var settingAllRowSelection = function (prev) {
-                // const otherRows = dataList.filter((row) => !isSelected(row));
-                // const newAllSelectedRows = [...prev, ...otherRows];
-                // onRowSelect && onRowSelect(newAllSelectedRows);
-                // return newAllSelectedRows;
                 onRowSelect && onRowSelect(dataList);
                 return dataList;
             };

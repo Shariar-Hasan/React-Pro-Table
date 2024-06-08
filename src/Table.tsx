@@ -6,31 +6,10 @@ import Checkbox from "./components/SharedComponents/Checkbox";
 import TableHeader from "./components/TableSections/TableHeader";
 import TableBody from "./components/TableSections/TableBody";
 import TableContextProvider from "./hooksAndContexts/TableContext";
+import TableFooter from "./components/TableSections/TableFooter";
 
 const Table = (props: ITableProps) => {
-  const {
-    // common Props
-    dataList,
-    headers,
-    bordered,
-    exportOptions,
-    filterOptions,
-    hoverable,
-    paginationOptions,
-    selectAll,
-    selectable,
-    striped,
-    responsive,
-    stickyFooter,
-    stickyHeader,
-
-    // events
-    onFiltering,
-    onRowExporting,
-    onRowHover,
-    onRowSelect,
-    onSortClick,
-  } = props;
+  const { responsive } = props;
   // common states
   return (
     <TableContextProvider value={props}>
@@ -46,6 +25,8 @@ const Table = (props: ITableProps) => {
             <TableBody />
           </div>
         </div>
+        {/* Table Footer SEction */}
+        <TableFooter />
       </div>
     </TableContextProvider>
   );

@@ -18,14 +18,15 @@ const ColumnSettings = () => {
                 style={{
                   display: "inline-block",
                 }}
-                defaultChecked={isColumnVisible(header)}
+                checked={isColumnVisible(header)}
                 onChange={(e) => {
                   if (e.target.checked) {
                     setVisibleColumns((prev) => [...prev, header]);
                   } else {
-                    setVisibleColumns((prev) =>
-                      prev.filter((item) => item.id !== header.id)
-                    );
+                    if (visibleColumns.length > 1)
+                      setVisibleColumns((prev) =>
+                        prev.filter((item) => item.id !== header.id)
+                      );
                   }
                 }}
               />

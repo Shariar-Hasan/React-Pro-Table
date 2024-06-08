@@ -42,6 +42,9 @@ const TableContextProvider = ({
   const [selectedRows, setSelectedRows] = useState<any[]>([]);
   const [visibleColumns, setVisibleColumns] =
     useState<HeaderSingleItemType[]>(headers);
+
+  // function customize
+
   const isSelected = (row: any) => {
     return selectedRows
       .map((r) => r[uniqueKeyAccessor as string])
@@ -73,15 +76,11 @@ const TableContextProvider = ({
     }
   };
   const handleSelectAllRow = () => {
-    if (selectedRows.length >= dataList.length) {
+    if (selectedRows.length >= dataList.length && dataList.length > 0) {
       setSelectedRows([]);
       onRowSelect && onRowSelect([]);
     } else {
       const settingAllRowSelection = (prev: any[]) => {
-        // const otherRows = dataList.filter((row) => !isSelected(row));
-        // const newAllSelectedRows = [...prev, ...otherRows];
-        // onRowSelect && onRowSelect(newAllSelectedRows);
-        // return newAllSelectedRows;
         onRowSelect && onRowSelect(dataList);
         return dataList;
       };

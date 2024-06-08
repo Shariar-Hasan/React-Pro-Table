@@ -17,3 +17,24 @@ export const createUrl = (data: any, type: string) => {
   const url = window.URL.createObjectURL(blob);
   return url;
 };
+
+export const getCompressedPagination = (
+  numOfPage: number,
+  currentPage: number
+) => {
+  if (numOfPage <= 6)
+    return Array.from({ length: numOfPage }).map((_, index) => index + 1);
+
+  if (currentPage < 3 || currentPage > numOfPage - 2)
+    return [1, 2, "...", numOfPage - 1, numOfPage];
+  else
+    return [
+      1,
+      "...",
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      "...",
+      numOfPage,
+    ];
+};

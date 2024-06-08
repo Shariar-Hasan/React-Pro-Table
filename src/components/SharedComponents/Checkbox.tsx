@@ -11,9 +11,8 @@ const Checkbox = ({ item, checkAll }: { item?: any; checkAll?: boolean }) => {
         selectedRows
           .map((r) => r[uniqueKeyAccessor as string])
           .includes(item[uniqueKeyAccessor as string])) ||
-      selectedRows.length >= dataList.length;
+      (selectedRows.length >= dataList.length && dataList.length > 0);
     setIsChecked(newIsChecked);
-    // console.log({ item });
   }, [selectedRows]);
   return (
     <span

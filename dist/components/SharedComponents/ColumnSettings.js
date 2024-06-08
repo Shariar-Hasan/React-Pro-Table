@@ -17,14 +17,15 @@ var ColumnSettings = function () {
             React.createElement("div", { className: "table__settings-menu" }, headers.map(function (header, index) { return (React.createElement("label", { key: index, style: { width: "100px" } },
                 React.createElement("input", { type: "checkbox", width: 20, height: 20, style: {
                         display: "inline-block",
-                    }, defaultChecked: isColumnVisible(header), onChange: function (e) {
+                    }, checked: isColumnVisible(header), onChange: function (e) {
                         if (e.target.checked) {
                             setVisibleColumns(function (prev) { return __spreadArray(__spreadArray([], prev, true), [header], false); });
                         }
                         else {
-                            setVisibleColumns(function (prev) {
-                                return prev.filter(function (item) { return item.id !== header.id; });
-                            });
+                            if (visibleColumns.length > 1)
+                                setVisibleColumns(function (prev) {
+                                    return prev.filter(function (item) { return item.id !== header.id; });
+                                });
                         }
                     } }),
                 header.title)); })),
