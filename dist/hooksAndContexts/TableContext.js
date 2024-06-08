@@ -26,9 +26,9 @@ var TableContextProvider = function (_a) {
     var value = _a.value, children = _a.children;
     var _b = useRevalidateProps(value), 
     // common Props
-    dataList = _b.dataList, headers = _b.headers, bordered = _b.bordered, exportOptions = _b.exportOptions, filterOptions = _b.filterOptions, hoverable = _b.hoverable, paginationOptions = _b.paginationOptions, selectAll = _b.selectAll, selectable = _b.selectable, striped = _b.striped, responsive = _b.responsive, stickyFooter = _b.stickyFooter, stickyHeader = _b.stickyHeader, uniqueKeyAccessor = _b.uniqueKeyAccessor, 
+    dataList = _b.dataList, headers = _b.headers, uniqueKeyAccessor = _b.uniqueKeyAccessor, 
     // events
-    onFiltering = _b.onFiltering, onRowExporting = _b.onRowExporting, onRowHover = _b.onRowHover, onRowSelect = _b.onRowSelect, onRowClick = _b.onRowClick, onSingleRowSelect = _b.onSingleRowSelect, onSortClick = _b.onSortClick;
+    onRowSelect = _b.onRowSelect, onRowClick = _b.onRowClick, onSingleRowSelect = _b.onSingleRowSelect;
     var _c = useState([]), selectedRows = _c[0], setSelectedRows = _c[1];
     var _d = useState(headers), visibleColumns = _d[0], setVisibleColumns = _d[1];
     // function customize

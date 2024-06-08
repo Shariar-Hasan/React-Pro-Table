@@ -18,26 +18,11 @@ const TableContextProvider = ({
     // common Props
     dataList,
     headers,
-    bordered,
-    exportOptions,
-    filterOptions,
-    hoverable,
-    paginationOptions,
-    selectAll,
-    selectable,
-    striped,
-    responsive,
-    stickyFooter,
-    stickyHeader,
     uniqueKeyAccessor,
     // events
-    onFiltering,
-    onRowExporting,
-    onRowHover,
     onRowSelect,
     onRowClick,
     onSingleRowSelect,
-    onSortClick,
   } = useRevalidateProps(value);
   const [selectedRows, setSelectedRows] = useState<any[]>([]);
   const [visibleColumns, setVisibleColumns] =

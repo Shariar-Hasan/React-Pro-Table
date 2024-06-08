@@ -3,3 +3,9 @@
   display: table-cell;
   padding: 5px;
 }
+.table__column .sortable {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}

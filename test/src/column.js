@@ -11,28 +11,24 @@ export const columns = [
     title: "First Name",
     render: (row) => row.firstName,
     accessor: "firstName",
-    sortable: true,
   },
   {
     id: 3,
     title: "Last Name",
     render: (row) => row.lastName,
     accessor: "lastName",
-    sortable: true,
   },
   {
     id: 4,
     title: "Email",
     render: (row) => row.email,
     accessor: "email",
-    sortable: true,
   },
   {
     id: 5,
     title: "Phone",
     render: (row) => row.phone,
     accessor: "phone",
-    sortable: true,
   },
   {
     id: 6,
@@ -46,7 +42,6 @@ export const columns = [
     title: "City",
     render: (row) => row.city,
     accessor: "city",
-    sortable: true,
   },
   {
     id: 8,
@@ -60,13 +55,11 @@ export const columns = [
     title: "Country",
     render: (row) => row.country,
     accessor: "country",
-    sortable: true,
   },
   {
     id: 10,
     title: "Zip Code",
     render: (row) => row.zipCode,
     accessor: "zipCode",
-    sortable: true,
   },
 ];
