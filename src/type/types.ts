@@ -4,11 +4,13 @@ type ColumnAccessorFunctionType = (row: any) => any;
 
 type SortDirection = "asc" | "desc";
 
+// datalist type settings for single item
 type DatalistSingleItemType = {
   index: number | string;
   [key: string]: any;
 };
 
+// header type setting
 type HeaderSingleItemType = {
   id: number | string;
   title: string;
@@ -17,13 +19,14 @@ type HeaderSingleItemType = {
   sortable?: boolean;
 };
 
+// Export related
 type TableSingleExportType = "json" | "csv";
-
 type TableExportOptionsType = {
   exportType: TableSingleExportType;
   fileName?: string;
 };
 
+// table filter type settings
 type TableFilterTypes = "text" | "number" | "date";
 
 type TableFilterOptionsType = {
@@ -32,6 +35,7 @@ type TableFilterOptionsType = {
   filterType: TableFilterTypes;
 };
 
+// table pagination type settings
 type TablePaginationOptionsType = {
   itemsPerPageList: number[];
   totalItems: number;
@@ -42,10 +46,12 @@ type TablePaginationOptionsType = {
   showCompressedButtons?: boolean;
 };
 
+// event handlers
 type OnSortClickEventType = (
   dir: SortDirection,
   orderByAccessor: string
 ) => void;
+
 type OnPaginationChangesEventType = (
   currentPage: number,
   currentItemsPerPage: number
@@ -58,13 +64,16 @@ type OnSingleRowSelectEventType = (
   row: any,
   selectedRows: any[]
 ) => void;
+
 type OnRowSelectEventType = (selectedRows: any[]) => void;
+
 type OnRowClickEventType = (selectedRows: any[], rowIndex: number) => void;
 
 type OnTableExportingEventType = (rowId: number, rowItems: any) => void;
 
 type OnTableFilteringEventType = (type: TableFilterTypes, value: any) => void;
 
+// main table props type setting
 interface ITableProps {
   dataList: DatalistSingleItemType[];
   headers: HeaderSingleItemType[];
@@ -82,7 +91,7 @@ interface ITableProps {
   paginationOptions?: TablePaginationOptionsType;
   responsive?: boolean;
   // events
-  onSortClick?: OnSortClickEventType;
+  onSort?: OnSortClickEventType;
   onPaginationChange?: OnPaginationChangesEventType;
   onRowHover?: OnRowHoverEventType;
   onRowSelect?: OnRowSelectEventType;

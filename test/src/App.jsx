@@ -8,10 +8,26 @@ function App() {
   const [dataListItems, setDataListItems] = useState([]);
   const [page, setPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [sortProps, setSortProps] = useState({ order: '', orderBy: '' });
   useEffect(() => {
-    const newDataList = dataList.slice((page - 1) * itemsPerPage, page * itemsPerPage)
+    const newDataList = dataList
+      .map((item) => ({ ...item, id: parseInt(item.id, 10) }))
+      .sort((a, b) => {
+        console.log({ sortProps, bby: b[sortProps.orderBy] - a[sortProps.orderBy], aby: a[sortProps.orderBy] - b[sortProps.orderBy] })
+        if (sortProps.order === "dec") {
+          if (a[sortProps.orderBy] > b[sortProps.orderBy]) return -1;
+          else return 1;
+        } else if (sortProps.order === "asc") {
+          if (a[sortProps.orderBy] < b[sortProps.orderBy]) return 1;
+          else return -1;
+        }
+        return 0
+
+      })
+      .slice((page - 1) * itemsPerPage, page * itemsPerPage)
+    console.log({ newDataList })
     setDataListItems(newDataList)
-  }, [page, itemsPerPage])
+  }, [page, itemsPerPage, sortProps])
   return (
     <>
       <div className="App container">
@@ -66,6 +82,9 @@ function App() {
           onPaginationChange={(page, itemsPerPage) => {
             setPage(page)
             setItemsPerPage(itemsPerPage)
+          }}
+          onSort={(order, orderBy) => {
+            setSortProps({ order, orderBy })
           }}
         />
       </div>

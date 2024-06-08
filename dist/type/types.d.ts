@@ -56,7 +56,7 @@ interface ITableProps {
     filterOptions?: TableFilterOptionsType[];
     paginationOptions?: TablePaginationOptionsType;
     responsive?: boolean;
-    onSortClick?: OnSortClickEventType;
+    onSort?: OnSortClickEventType;
     onPaginationChange?: OnPaginationChangesEventType;
     onRowHover?: OnRowHoverEventType;
     onRowSelect?: OnRowSelectEventType;
