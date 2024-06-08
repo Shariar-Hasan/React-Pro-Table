@@ -11,7 +11,7 @@ html {
 }
 
 /* Table style override */
-.table__table {
+.table__body {
   background-color: white;
   border-radius: 6px;
 }

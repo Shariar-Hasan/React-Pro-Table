@@ -29,7 +29,9 @@ const TableBody = () => {
               isSelected(item) ? "selected" : ""
             }`}
             key={index}
-            onClick={() => handleRowClick(item, index)}
+            onClick={() => {
+              handleRowClick(item, index)
+            }}
           >
             {selectable && (
               <div className="table__column">

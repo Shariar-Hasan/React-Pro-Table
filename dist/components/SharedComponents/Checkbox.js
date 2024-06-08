@@ -9,9 +9,8 @@ var Checkbox = function (_a) {
             selectedRows
                 .map(function (r) { return r[uniqueKeyAccessor]; })
                 .includes(item[uniqueKeyAccessor])) ||
-            selectedRows.length >= dataList.length;
+            (selectedRows.length >= dataList.length && dataList.length > 0);
         setIsChecked(newIsChecked);
-        // console.log({ item });
     }, [selectedRows]);
     return (React.createElement("span", { className: "table__checkbox ".concat(isChecked ? "checked" : ""), onClick: function () {
             console.log({ checkAll: checkAll });

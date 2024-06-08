@@ -7,8 +7,8 @@
   flex-wrap: wrap;
   gap: 5px;
 }
-.table__top-right{
-  
+.table__top{
+  padding: 5px 10px;
 }
 .table__settings-button {
   position: relative;
