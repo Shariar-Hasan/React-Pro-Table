@@ -1,12 +1,29 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import {
   HeaderSingleItemType,
   ITableProps,
-  TableContextProps,
 } from "../type/types";
 import useRevalidateProps from "./useRevalidateProps";
 export const TableContext = createContext<TableContextProps>({} as any);
 export const useTableProps = () => useContext(TableContext);
+export type TableContextProps = ITableProps & {
+  selectedRows: any[];
+  setSelectedRows: Dispatch<SetStateAction<any[]>>;
+  handleRowClick: (row: any, index: number) => void;
+  handleSelectAllRow: () => void;
+  isSelected: (row: any) => boolean;
+  isColumnVisible: (col: HeaderSingleItemType) => boolean;
+  visibleColumns: HeaderSingleItemType[];
+  setVisibleColumns: Dispatch<SetStateAction<HeaderSingleItemType[]>>;
+  handleFilterSectionClick: (header: HeaderSingleItemType) => void;
+};
 const TableContextProvider = ({
   value,
   children,
@@ -27,6 +44,7 @@ const TableContextProvider = ({
   const [selectedRows, setSelectedRows] = useState<any[]>([]);
   const [visibleColumns, setVisibleColumns] =
     useState<HeaderSingleItemType[]>(headers);
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState<boolean>(false);
 
   // function customize
 
@@ -39,6 +57,12 @@ const TableContextProvider = ({
     return visibleColumns.some((vcol) => vcol.id === col.id);
   };
   // common functions
+  // handle modal close
+  const handleModalClose = () => {
+    setIsFilterModalOpen(false);
+  };
+
+  // row click function
   const handleRowClick = (row: any, index: number) => {
     onRowClick && onRowClick(row, index);
     if (isSelected(row)) {
@@ -60,6 +84,8 @@ const TableContextProvider = ({
       setSelectedRows(newSelectedRows);
     }
   };
+
+  // select all row function
   const handleSelectAllRow = () => {
     if (selectedRows.length >= dataList.length && dataList.length > 0) {
       setSelectedRows([]);
@@ -73,7 +99,9 @@ const TableContextProvider = ({
     }
   };
 
-  const handleSelectVisibleColumn = () => {};
+  // filter section click handler
+  const handleFilterSectionClick = (selectedHeader: HeaderSingleItemType) => {};
+
   return (
     <TableContext.Provider
       value={{
@@ -86,6 +114,7 @@ const TableContextProvider = ({
         isColumnVisible,
         visibleColumns,
         setVisibleColumns,
+        handleFilterSectionClick,
       }}
     >
       {children}

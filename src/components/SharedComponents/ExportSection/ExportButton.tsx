@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import {
   HeaderSingleItemType,
   TableSingleExportType,
-} from "../../type/types";
-import { exportAsCsv, exportAsJson } from "../../helper/mainHelpers";
-import { useTableProps } from "../../hooksAndContexts/TableContext";
-import { getVisibleData } from "../../helper/getManipulatedData";
+} from "../../../type/types";
+import { exportAsCsv, exportAsJson } from "../../../helper/mainHelpers";
+import { useTableProps } from "../../../hooksAndContexts/TableContext";
+import { getVisibleData } from "../../../helper/getManipulatedData";
 
 const ExportButton = ({
   type, 

@@ -207,14 +207,11 @@ const FullFunctionalPagination = ({
     getCompressedPagination(numOfPages, currentPage)
   );
   useEffect(() => {
-    console.log({
-      get: getCompressedPagination(numOfPages, currentPage),
-      currentPage,
-      numOfPages,
-      showCompressedButtons,
-    });
+    // compressed pagination : 1 2 ... 4 5 6 ... 9 10
     setCompressedPaginations(getCompressedPagination(numOfPages, currentPage));
   }, [currentPage, numOfPages]);
+
+
   const handleCompressedPagination = (item: string | number, index: number) => {
     if (item !== "...") {
       handlePageChange(item as number);
@@ -229,6 +226,7 @@ const FullFunctionalPagination = ({
       }
     }
   };
+
   if (showCompressedButtons) {
     return compressedPaginations.map((item, index) => (
       <button

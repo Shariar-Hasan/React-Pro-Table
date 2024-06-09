@@ -75,12 +75,7 @@ var FullFunctionalPagination = function (_a) {
     var numOfPages = _a.numOfPages, currentPage = _a.currentPage, handlePageChange = _a.handlePageChange, showCompressedButtons = _a.showCompressedButtons;
     var _b = useState(getCompressedPagination(numOfPages, currentPage)), compressedPaginations = _b[0], setCompressedPaginations = _b[1];
     useEffect(function () {
-        console.log({
-            get: getCompressedPagination(numOfPages, currentPage),
-            currentPage: currentPage,
-            numOfPages: numOfPages,
-            showCompressedButtons: showCompressedButtons,
-        });
+        // compressed pagination : 1 2 ... 4 5 6 ... 9 10
         setCompressedPaginations(getCompressedPagination(numOfPages, currentPage));
     }, [currentPage, numOfPages]);
     var handleCompressedPagination = function (item, index) {

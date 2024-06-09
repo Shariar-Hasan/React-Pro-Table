@@ -1,3 +1,5 @@
+@import "./some-common-classes.css";
+@import "./context-menu-styles.css";
 @import "./row-styles.css";
 @import "./column-styles.css";
 @import "./export-styles.css";
@@ -11,7 +13,7 @@
 .rpt__body {
   width: 100%;
 }
-.flex-center{
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;

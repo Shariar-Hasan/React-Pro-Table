@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import ExportButton from "./ExportButton";
-import { TableContextProps, TableExportOptionsType } from "../../type/types";
+import { TableExportOptionsType } from "../../../type/types";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { useTableProps } from "../../hooksAndContexts/TableContext";
+import { useTableProps } from "../../../hooksAndContexts/TableContext";
 
 const ExportButtonList = () => {
   const { dataList, headers, exportOptions } = useTableProps();

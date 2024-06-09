@@ -5,6 +5,8 @@ export const columns = [
     render: (row) => row.id,
     accessor: "id",
     sortable: true,
+
+    filterable: true,
   },
   {
     id: 2,
@@ -29,6 +31,7 @@ export const columns = [
     title: "Phone",
     render: (row) => row.phone,
     accessor: "phone",
+    filterable: true,
   },
   {
     id: 6,
@@ -36,6 +39,7 @@ export const columns = [
     render: (row) => row.address,
     accessor: "address",
     sortable: true,
+    filterable: true,
   },
   {
     id: 7,
@@ -49,6 +53,7 @@ export const columns = [
     render: (row) => row.state,
     accessor: "state",
     sortable: true,
+    filterable: true,
   },
   {
     id: 9,

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { TableContextProps } from "../../type/types";
 import Checkbox from "../SharedComponents/Checkbox";
 import { useTableProps } from "../../hooksAndContexts/TableContext";
 

@@ -18,7 +18,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, } from "react";
 import useRevalidateProps from "./useRevalidateProps";
 export var TableContext = createContext({});
 export var useTableProps = function () { return useContext(TableContext); };
@@ -31,6 +31,7 @@ var TableContextProvider = function (_a) {
     onRowSelect = _b.onRowSelect, onRowClick = _b.onRowClick, onSingleRowSelect = _b.onSingleRowSelect;
     var _c = useState([]), selectedRows = _c[0], setSelectedRows = _c[1];
     var _d = useState(headers), visibleColumns = _d[0], setVisibleColumns = _d[1];
+    var _e = useState(false), isFilterModalOpen = _e[0], setIsFilterModalOpen = _e[1];
     // function customize
     var isSelected = function (row) {
         return selectedRows
@@ -41,6 +42,11 @@ var TableContextProvider = function (_a) {
         return visibleColumns.some(function (vcol) { return vcol.id === col.id; });
     };
     // common functions
+    // handle modal close
+    var handleModalClose = function () {
+        setIsFilterModalOpen(false);
+    };
+    // row click function
     var handleRowClick = function (row, index) {
         onRowClick && onRowClick(row, index);
         if (isSelected(row)) {
@@ -61,6 +67,7 @@ var TableContextProvider = function (_a) {
             setSelectedRows(newSelectedRows);
         }
     };
+    // select all row function
     var handleSelectAllRow = function () {
         if (selectedRows.length >= dataList.length && dataList.length > 0) {
             setSelectedRows([]);
@@ -74,7 +81,8 @@ var TableContextProvider = function (_a) {
             setSelectedRows(settingAllRowSelection);
         }
     };
-    var handleSelectVisibleColumn = function () { };
-    return (React.createElement(TableContext.Provider, { value: __assign(__assign({}, value), { selectedRows: selectedRows, setSelectedRows: setSelectedRows, handleRowClick: handleRowClick, handleSelectAllRow: handleSelectAllRow, isSelected: isSelected, isColumnVisible: isColumnVisible, visibleColumns: visibleColumns, setVisibleColumns: setVisibleColumns }) }, children));
+    // filter section click handler
+    var handleFilterSectionClick = function (selectedHeader) { };
+    return (React.createElement(TableContext.Provider, { value: __assign(__assign({}, value), { selectedRows: selectedRows, setSelectedRows: setSelectedRows, handleRowClick: handleRowClick, handleSelectAllRow: handleSelectAllRow, isSelected: isSelected, isColumnVisible: isColumnVisible, visibleColumns: visibleColumns, setVisibleColumns: setVisibleColumns, handleFilterSectionClick: handleFilterSectionClick }) }, children));
 };
 export default TableContextProvider;

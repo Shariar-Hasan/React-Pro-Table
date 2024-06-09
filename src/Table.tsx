@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import "../assets/css/global.css";
-import { ITableProps, TableContextProps } from "./type/types";
+import { ITableProps } from "./type/types";
 import TableTop from "./components/TableSections/TableTop";
 import Checkbox from "./components/SharedComponents/Checkbox";
 import TableHeader from "./components/TableSections/TableHeader";
