@@ -1,13 +1,13 @@
 /* table Export section */
 
-.table__export-dropdown-wrapper {
+.rpt__export-dropdown-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
 }
 
-.table__export-dropdown-button {
+.rpt__export-dropdown-button {
   cursor: pointer;
   border: none;
   display: flex;
@@ -15,7 +15,7 @@
   justify-content: center;
   gap: 2px;
 }
-.table__export-buttons-wrapper {
+.rpt__export-buttons-wrapper {
   position: absolute;
   top: 100%;
   left: 0;
@@ -31,16 +31,16 @@
   z-index: 2;
   border-radius: 5px;
 }
-.table__export-dropdown-wrapper:focus-within .table__export-buttons-wrapper {
+.rpt__export-dropdown-wrapper:focus-within .rpt__export-buttons-wrapper {
   opacity: 1;
   visibility: visible;
 }
-.table__export-buttons-wrapper button {
+.rpt__export-buttons-wrapper button {
   border: none;
   cursor: pointer;
   background-color: transparent;
 }
-.table__export-buttons-wrapper button:hover,
-.table__export-dropdown-button:hover {
+.rpt__export-buttons-wrapper button:hover,
+.rpt__export-dropdown-button:hover {
   backdrop-filter: brightness(0.93);
 }

@@ -48,7 +48,7 @@ const PaginationFooter = () => {
         setCurrentPage(1);
       };
       return (
-        <div className="table__pagination-footer">
+        <div className="rpt__pagination-footer">
           <FooterPaginationLeft
             showResultsCounts={showResultsCounts}
             currentItemsPerPage={currentItemsPerPage}
@@ -84,7 +84,7 @@ const FooterPaginationLeft = ({
   totalItems: number;
 }) => {
   return (
-    <div className="table__pagination-footer-left">
+    <div className="rpt__pagination-footer-left">
       {showResultsCounts && (
         <p>
           Showing {(currentPage - 1) * currentItemsPerPage + 1} to{" "}
@@ -111,7 +111,7 @@ const FooterPaginationMiddle = ({
   showCompressedButtons: boolean;
 }) => {
   return (
-    <div className="table__pagination-footer-middle">
+    <div className="rpt__pagination-footer-middle">
       <div>
         {/* pagination buttons */}
         {showSkipToPageButton && (
@@ -170,13 +170,13 @@ const FooterPaginationRight = ({
   itemsPerPageList: number[];
 }) => {
   return (
-    <div className="table__pagination-footer-right">
-      <div className="table__pagination-itemPerPage-wrapper">
-        <button className="table__pagination-itemPerPage-btn">
+    <div className="rpt__pagination-footer-right">
+      <div className="rpt__pagination-itemPerPage-wrapper" tabIndex={1}>
+        <button className="rpt__pagination-itemPerPage-btn">
           {currentItemsPerPage}
         </button>{" "}
         rows per page
-        <div className="table__pagination-itemPerPage-list">
+        <div className="rpt__pagination-itemPerPage-list">
           {itemsPerPageList.map((itemPerPage, index) => (
             <button
               key={index}

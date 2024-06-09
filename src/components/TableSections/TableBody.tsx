@@ -23,7 +23,7 @@ const TableBody = () => {
       {dataList.map((item, index) => {
         return (
           <div
-            className={`table__row ${bordered ? "bordered" : ""} ${
+            className={`rpt__row ${bordered ? "bordered" : ""} ${
               selectable ? "selectable" : ""
             } ${hoverable ? "hoverable" : ""} ${striped ? "striped" : ""} ${
               isSelected(item) ? "selected" : ""
@@ -34,14 +34,14 @@ const TableBody = () => {
             }}
           >
             {selectable && (
-              <div className="table__column">
+              <div className="rpt__column">
                 <Checkbox item={item} />
               </div>
             )}
             {headers.map(
               (header, index) =>
                 isColumnVisible(header) && (
-                  <div className="table__column" key={index}>
+                  <div className="rpt__column" key={index}>
                     {header.render(item)}
                   </div>
                 )

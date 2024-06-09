@@ -18,10 +18,10 @@ var TableHeader = function () {
             onSort && onSort("desc", name);
         }
     };
-    return (React.createElement("div", { className: "table__header table__row ".concat(bordered ? "bordered" : "", " ").concat(stickyHeader ? "sticky" : "", " ").concat(striped ? "striped" : "") },
-        selectable && (React.createElement("div", { className: "table__column" }, selectAll && React.createElement(Checkbox, { checkAll: true }))),
+    return (React.createElement("div", { className: "rpt__header rpt__row ".concat(bordered ? "bordered" : "", " ").concat(stickyHeader ? "sticky" : "", " ").concat(striped ? "striped" : "") },
+        selectable && (React.createElement("div", { className: "rpt__column" }, selectAll && React.createElement(Checkbox, { checkAll: true }))),
         headers.map(function (header, index) {
-            return isColumnVisible(header) && (React.createElement("div", { className: "table__column", key: index }, header.sortable ? (React.createElement("div", { className: "sortable", onClick: function () { return handleSort(header.accessor); } },
+            return isColumnVisible(header) && (React.createElement("div", { className: "rpt__column", key: index }, header.sortable ? (React.createElement("div", { className: "sortable", onClick: function () { return handleSort(header.accessor); } },
                 React.createElement("span", null, header.title),
                 sortProps.orderBy === header.accessor &&
                     (sortProps.order === "asc" ? (React.createElement(FaCaretDown, null)) : (React.createElement(FaCaretUp, null))))) : (header.title)));

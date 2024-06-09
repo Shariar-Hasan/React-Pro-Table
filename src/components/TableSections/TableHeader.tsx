@@ -30,19 +30,19 @@ const TableHeader = () => {
   };
   return (
     <div
-      className={`table__header table__row ${bordered ? "bordered" : ""} ${
+      className={`rpt__header rpt__row ${bordered ? "bordered" : ""} ${
         stickyHeader ? "sticky" : ""
       } ${striped ? "striped" : ""}`}
     >
       {selectable && (
-        <div className="table__column">
+        <div className="rpt__column">
           {selectAll && <Checkbox checkAll />}
         </div>
       )}
       {headers.map(
         (header, index) =>
           isColumnVisible(header) && (
-            <div className={`table__column`} key={index}>
+            <div className={`rpt__column`} key={index}>
               {header.sortable ? (
                 <div
                   className="sortable"

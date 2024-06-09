@@ -9,10 +9,10 @@ var Table = function (props) {
     var responsive = props.responsive;
     // common states
     return (React.createElement(TableContextProvider, { value: props },
-        React.createElement("div", { className: "table__body" },
+        React.createElement("div", { className: "rpt__body" },
             React.createElement(TableTop, null),
-            React.createElement("div", { className: "table__wrpper ".concat(responsive ? "table__responsive" : "") },
-                React.createElement("div", { className: "table__table" },
+            React.createElement("div", { className: "rpt__wrpper ".concat(responsive ? "rpt__responsive" : "") },
+                React.createElement("div", { className: "rpt__table" },
                     React.createElement(TableHeader, null),
                     React.createElement(TableBody, null))),
             React.createElement(TableFooter, null))));

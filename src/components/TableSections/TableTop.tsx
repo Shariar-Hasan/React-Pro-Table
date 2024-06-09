@@ -8,12 +8,12 @@ const TableTop = () => {
   const { exportOptions, selectedRows, headers, columnSettings } =
     useTableProps();
   return (
-    <div className="table__top">
-      <div className="table__top-left">
+    <div className="rpt__top">
+      <div className="rpt__top-left">
         {exportOptions && exportOptions.length > 0 && <ExportButtonList />}
       </div>
-      <div className="table__top-middle"></div>
-      <div className="table__top-right">
+      <div className="rpt__top-middle"></div>
+      <div className="rpt__top-right">
         <div>
           {selectedRows &&
             selectedRows.length > 0 &&

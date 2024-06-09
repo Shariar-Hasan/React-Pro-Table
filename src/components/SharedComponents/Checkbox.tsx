@@ -16,7 +16,7 @@ const Checkbox = ({ item, checkAll }: { item?: any; checkAll?: boolean }) => {
   }, [selectedRows]);
   return (
     <span
-      className={`table__checkbox ${isChecked ? "checked" : ""}`}
+      className={`rpt__checkbox ${isChecked ? "checked" : ""}`}
       onClick={() => {
         console.log({ checkAll });
         checkAll
