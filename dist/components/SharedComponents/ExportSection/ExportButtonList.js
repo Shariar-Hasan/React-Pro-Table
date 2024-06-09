@@ -1,7 +1,7 @@
 import React from "react";
 import ExportButton from "./ExportButton";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { useTableProps } from "../../hooksAndContexts/TableContext";
+import { useTableProps } from "../../../hooksAndContexts/TableContext";
 var ExportButtonList = function () {
     var _a = useTableProps(), dataList = _a.dataList, headers = _a.headers, exportOptions = _a.exportOptions;
     return (React.createElement("div", { className: "rpt__export-dropdown-wrapper", tabIndex: 1 },

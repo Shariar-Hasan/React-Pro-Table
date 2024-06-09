@@ -9,6 +9,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [sortProps, setSortProps] = useState({ order: '', orderBy: '' });
+  const [filters, setFilters] = useState({ type: '', accessor: '', value: '' });
   useEffect(() => {
     const newDataList = dataList
       .map((item) => ({ ...item, id: parseInt(item.id, 10) }))
@@ -25,9 +26,9 @@ function App() {
 
       })
       .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-    console.log({ newDataList })
+    console.log({ newDataList, filters })
     setDataListItems(newDataList)
-  }, [page, itemsPerPage, sortProps])
+  }, [page, itemsPerPage, sortProps, filters])
   return (
     <>
       <div className="App container">
@@ -85,6 +86,9 @@ function App() {
           }}
           onSort={(order, orderBy) => {
             setSortProps({ order, orderBy })
+          }}
+          onFiltering={(type, accessor, value) => {
+            setFilters({ type, accessor, value })
           }}
         />
       </div>

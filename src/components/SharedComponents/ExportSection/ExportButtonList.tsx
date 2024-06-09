@@ -1,17 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import ExportButton from "./ExportButton";
-import { TableContextProps, TableExportOptionsType } from "../../type/types";
+import { TableExportOptionsType } from "../../../type/types";
 import { TiArrowSortedDown } from "react-icons/ti";
-import { useTableProps } from "../../hooksAndContexts/TableContext";
+import { useTableProps } from "../../../hooksAndContexts/TableContext";
 
 const ExportButtonList = () => {
   const { dataList, headers, exportOptions } = useTableProps();
   return (
-    <div className="table__export-dropdown-wrapper" tabIndex={1}>
-      <button className="table__export-dropdown-button">
+    <div className="rpt__export-dropdown-wrapper" tabIndex={1}>
+      <button className="rpt__export-dropdown-button">
         Export as <TiArrowSortedDown />
       </button>
-      <div className={`table__export-buttons-wrapper`}>
+      <div className={`rpt__export-buttons-wrapper`}>
         {exportOptions?.map((item: TableExportOptionsType, index: number) => (
           <ExportButton
             key={index}

@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 import "../assets/css/global.css";
-import { ITableProps, TableContextProps } from "./type/types";
+import { ITableProps } from "./type/types";
 import TableTop from "./components/TableSections/TableTop";
 import Checkbox from "./components/SharedComponents/Checkbox";
 import TableHeader from "./components/TableSections/TableHeader";
@@ -13,12 +13,12 @@ const Table = (props: ITableProps) => {
   // common states
   return (
     <TableContextProvider value={props}>
-      <div className="table__body">
+      <div className="rpt__body">
         <TableTop />
         <div
-          className={`table__wrpper ${responsive ? "table__responsive" : ""}`}
+          className={`rpt__wrpper ${responsive ? "rpt__responsive" : ""}`}
         >
-          <div className="table__table">
+          <div className="rpt__table">
             {/* Table Header Section */}
             <TableHeader />
             {/* Table Body SEction */}

@@ -1,11 +1,12 @@
 /* Table Column section */
-.table__column {
+.rpt__column {
   display: table-cell;
   padding: 5px;
 }
-.table__column .sortable {
+.rpt__column .sortable {
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: row;
 }

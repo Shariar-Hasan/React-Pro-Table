@@ -12,7 +12,7 @@ var Checkbox = function (_a) {
             (selectedRows.length >= dataList.length && dataList.length > 0);
         setIsChecked(newIsChecked);
     }, [selectedRows]);
-    return (React.createElement("span", { className: "table__checkbox ".concat(isChecked ? "checked" : ""), onClick: function () {
+    return (React.createElement("span", { className: "rpt__checkbox ".concat(isChecked ? "checked" : ""), onClick: function () {
             console.log({ checkAll: checkAll });
             checkAll
                 ? handleSelectAllRow()

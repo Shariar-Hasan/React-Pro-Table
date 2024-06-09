@@ -11,22 +11,22 @@ html {
 }
 
 /* Table style override */
-.table__body {
+.rpt__body {
   background-color: white;
   border-radius: 6px;
 }
-.table__column {
+.rpt__column {
   padding: 10px 8px;
 }
 
-.table__export-dropdown-button {
+.rpt__export-dropdown-button {
   padding: 5px 10px;
   border-radius: 5px;
   background-color: purple;
   transition: all 0.3s ease-in-out;
   color: aliceblue;
 }
-.table__export-dropdown-button {
+.rpt__export-dropdown-button {
   padding: 5px 10px;
   border-radius: 5px;
   background-color: purple;
@@ -34,7 +34,7 @@ html {
   color: aliceblue;
 }
 
-.table__export-buttons-wrapper {
+.rpt__export-buttons-wrapper {
   background-color: white;
   border: 1px solid #ccc;
 }

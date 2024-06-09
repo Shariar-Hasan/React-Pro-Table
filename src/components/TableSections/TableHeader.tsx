@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useTableProps } from "../../hooksAndContexts/TableContext";
 import Checkbox from "../SharedComponents/Checkbox";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
-
+import { BsSortAlphaDown, BsSortAlphaUp } from "react-icons/bs";
+import { LuFilter } from "react-icons/lu";
 const TableHeader = () => {
   const {
     headers,
@@ -30,35 +31,45 @@ const TableHeader = () => {
   };
   return (
     <div
-      className={`table__header table__row ${bordered ? "bordered" : ""} ${
+      className={`rpt__header rpt__row ${bordered ? "bordered" : ""} ${
         stickyHeader ? "sticky" : ""
       } ${striped ? "striped" : ""}`}
     >
       {selectable && (
-        <div className="table__column">
-          {selectAll && <Checkbox checkAll />}
-        </div>
+        <div className="rpt__column">{selectAll && <Checkbox checkAll />}</div>
       )}
       {headers.map(
         (header, index) =>
           isColumnVisible(header) && (
-            <div className={`table__column`} key={index}>
-              {header.sortable ? (
-                <div
-                  className="sortable"
-                  onClick={() => handleSort(header.accessor)}
-                >
-                  <span>{header.title}</span>
-                  {sortProps.orderBy === header.accessor &&
-                    (sortProps.order === "asc" ? (
-                      <FaCaretDown />
-                    ) : (
-                      <FaCaretUp />
-                    ))}
-                </div>
-              ) : (
-                header.title
-              )}
+            <div className={`rpt__column `} key={index}>
+              <div className="d-flex justify-content-between gap-2">
+                {header.sortable ? (
+                  <div
+                    className="sortable flex-grow"
+                    onClick={() => handleSort(header.accessor)}
+                  >
+                    <span>{header.title}</span>
+                    <span className="flex-center">
+                      {sortProps.orderBy === header.accessor &&
+                        (sortProps.order === "asc" ? (
+                          <BsSortAlphaUp />
+                        ) : (
+                          <BsSortAlphaDown />
+                        ))}
+                    </span>
+                  </div>
+                ) : (
+                  header.title
+                )}
+                {header.filterable && (
+                  <span
+                    className="flex-center cursor-pointer"
+                    onClick={() => {}}
+                  >
+                    <LuFilter />
+                  </span>
+                )}
+              </div>
             </div>
           )
       )}

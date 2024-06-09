@@ -1,5 +1,5 @@
 /* Pagination section */
-.table__pagination-footer {
+.rpt__pagination-footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -9,34 +9,35 @@
   align-items: center; */
   padding: 5px 10px;
 }
-.table__pagination-footer > div {
+.rpt__pagination-footer > div {
   flex-grow: 1;
 }
-.table__pagination-footer > div:nth-child(2) {
+.rpt__pagination-footer > div:nth-child(2) {
   text-align: center;
 }
-.table__pagination-footer > div:nth-child(3) {
+.rpt__pagination-footer > div:nth-child(3) {
   text-align: right;
 }
 
 /* pagination footer right */
-.table__pagination-itemPerPage-wrapper {
+.rpt__pagination-itemPerPage-wrapper {
   position: relative;
   display: inline-block;
 }
-.table__pagination-itemPerPage-wrapper > .table__pagination-itemPerPage-btn {
+.rpt__pagination-itemPerPage-wrapper > .rpt__pagination-itemPerPage-btn {
   border: 1px solid #ddd;
 }
-.table__pagination-itemPerPage-btn {
+.rpt__pagination-itemPerPage-btn {
   padding: 5px 20px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
-.table__pagination-itemPerPage-btn:hover,
-.table__pagination-itemPerPage-list button:hover {
+.rpt__pagination-itemPerPage-btn:hover,
+.rpt__pagination-itemPerPage-list button:hover {
   background-color: #ddd;
 }
-.table__pagination-itemPerPage-list {
+.rpt__pagination-itemPerPage-list {
   position: absolute;
   bottom: 105%;
   left: 0;
@@ -51,12 +52,14 @@
   transition: all 0.3s ease-in-out;
   z-index: 2;
 }
-.table__pagination-itemPerPage-btn:focus + .table__pagination-itemPerPage-list {
+/* .rpt__pagination-itemPerPage-btn:focus-within +  */
+.rpt__pagination-itemPerPage-wrapper:focus-within
+  .rpt__pagination-itemPerPage-list {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
 }
-.table__pagination-itemPerPage-list button {
+.rpt__pagination-itemPerPage-list button {
   padding: 5px;
   margin: 3px 0;
   border: none;
@@ -64,57 +67,57 @@
   cursor: pointer;
   width: 100%;
 }
-.table__pagination-itemPerPage-list button:disabled {
+.rpt__pagination-itemPerPage-list button:disabled {
   background-color: #ddd;
   backdrop-filter: brightness(0.9);
   cursor: not-allowed;
 }
 
 /* pagination footer middle */
-.table__pagination-footer-middle {
+.rpt__pagination-footer-middle {
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-items: center;
 }
-.table__pagination-footer-middle button {
+.rpt__pagination-footer-middle button {
   background-color: transparent;
   border: none;
   cursor: pointer;
   border-radius: 50%;
   font-size: 16px;
 }
-.table__pagination-footer-middle button.selected {
+.rpt__pagination-footer-middle button.selected {
   background-color: #ddd;
   cursor: not-allowed;
   border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
-  .table__pagination-footer {
+  .rpt__pagination-footer {
     flex-wrap: wrap;
   }
-  .table__pagination-footer > div {
+  .rpt__pagination-footer > div {
     margin-bottom: 5px;
     flex-grow: 0;
   }
-  .table__pagination-footer > div:nth-child(2) {
+  .rpt__pagination-footer > div:nth-child(2) {
     width: 100%;
     text-align: center;
     order: 1;
     display: flex;
     justify-content: center;
   }
-  .table__pagination-footer > div:nth-child(3) {
+  .rpt__pagination-footer > div:nth-child(3) {
     text-align: right;
   }
-  .table__pagination-footer > div:nth-child(1),
-  .table__pagination-footer > div:nth-child(3) {
+  .rpt__pagination-footer > div:nth-child(1),
+  .rpt__pagination-footer > div:nth-child(3) {
     order: 2;
   }
 }
 @media screen and (max-width: 425px) {
-  .table__pagination-footer {
+  .rpt__pagination-footer {
     width: 100%;
     text-align: center;
     display: flex;

@@ -23,7 +23,7 @@ var PaginationFooter = function () {
                 setCurrentItemsPerPage(itemsPerPage);
                 setCurrentPage(1);
             };
-            return (React.createElement("div", { className: "table__pagination-footer" },
+            return (React.createElement("div", { className: "rpt__pagination-footer" },
                 React.createElement(FooterPaginationLeft, { showResultsCounts: showResultsCounts, currentItemsPerPage: currentItemsPerPage, totalItems: totalItems, currentPage: currentPage }),
                 React.createElement(FooterPaginationMiddle, { currentPage: currentPage, handlePageChange: handlePageChange, numOfPages: numOfPages, showSkipToPageButton: !!showSkipToPageButton, showCompressedButtons: !!showCompressedButtons }),
                 React.createElement(FooterPaginationRight, { currentItemsPerPage: currentItemsPerPage, handleItemsPerPageChange: handleItemsPerPageChange, itemsPerPageList: itemsPerPageList })));
@@ -31,7 +31,7 @@ var PaginationFooter = function () {
 };
 var FooterPaginationLeft = function (_a) {
     var showResultsCounts = _a.showResultsCounts, currentPage = _a.currentPage, currentItemsPerPage = _a.currentItemsPerPage, totalItems = _a.totalItems;
-    return (React.createElement("div", { className: "table__pagination-footer-left" }, showResultsCounts && (React.createElement("p", null,
+    return (React.createElement("div", { className: "rpt__pagination-footer-left" }, showResultsCounts && (React.createElement("p", null,
         "Showing ",
         (currentPage - 1) * currentItemsPerPage + 1,
         " to",
@@ -46,7 +46,7 @@ var FooterPaginationLeft = function (_a) {
 };
 var FooterPaginationMiddle = function (_a) {
     var currentPage = _a.currentPage, handlePageChange = _a.handlePageChange, numOfPages = _a.numOfPages, showSkipToPageButton = _a.showSkipToPageButton, showCompressedButtons = _a.showCompressedButtons;
-    return (React.createElement("div", { className: "table__pagination-footer-middle" },
+    return (React.createElement("div", { className: "rpt__pagination-footer-middle" },
         React.createElement("div", null,
             showSkipToPageButton && (React.createElement("button", { onClick: function () { return handlePageChange(1); }, disabled: currentPage <= 1 },
                 React.createElement(LuChevronsLeft, null))),
@@ -64,23 +64,18 @@ var FooterPaginationMiddle = function (_a) {
 };
 var FooterPaginationRight = function (_a) {
     var currentItemsPerPage = _a.currentItemsPerPage, handleItemsPerPageChange = _a.handleItemsPerPageChange, itemsPerPageList = _a.itemsPerPageList;
-    return (React.createElement("div", { className: "table__pagination-footer-right" },
-        React.createElement("div", { className: "table__pagination-itemPerPage-wrapper" },
-            React.createElement("button", { className: "table__pagination-itemPerPage-btn" }, currentItemsPerPage),
+    return (React.createElement("div", { className: "rpt__pagination-footer-right" },
+        React.createElement("div", { className: "rpt__pagination-itemPerPage-wrapper", tabIndex: 1 },
+            React.createElement("button", { className: "rpt__pagination-itemPerPage-btn" }, currentItemsPerPage),
             " ",
             "rows per page",
-            React.createElement("div", { className: "table__pagination-itemPerPage-list" }, itemsPerPageList.map(function (itemPerPage, index) { return (React.createElement("button", { key: index, onClick: function () { return handleItemsPerPageChange(itemPerPage); }, disabled: currentItemsPerPage === itemPerPage }, itemPerPage)); })))));
+            React.createElement("div", { className: "rpt__pagination-itemPerPage-list" }, itemsPerPageList.map(function (itemPerPage, index) { return (React.createElement("button", { key: index, onClick: function () { return handleItemsPerPageChange(itemPerPage); }, disabled: currentItemsPerPage === itemPerPage }, itemPerPage)); })))));
 };
 var FullFunctionalPagination = function (_a) {
     var numOfPages = _a.numOfPages, currentPage = _a.currentPage, handlePageChange = _a.handlePageChange, showCompressedButtons = _a.showCompressedButtons;
     var _b = useState(getCompressedPagination(numOfPages, currentPage)), compressedPaginations = _b[0], setCompressedPaginations = _b[1];
     useEffect(function () {
-        console.log({
-            get: getCompressedPagination(numOfPages, currentPage),
-            currentPage: currentPage,
-            numOfPages: numOfPages,
-            showCompressedButtons: showCompressedButtons,
-        });
+        // compressed pagination : 1 2 ... 4 5 6 ... 9 10
         setCompressedPaginations(getCompressedPagination(numOfPages, currentPage));
     }, [currentPage, numOfPages]);
     var handleCompressedPagination = function (item, index) {

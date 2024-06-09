@@ -13,8 +13,8 @@ import { useTableProps } from "../../hooksAndContexts/TableContext";
 var ColumnSettings = function () {
     var _a = useTableProps(), headers = _a.headers, visibleColumns = _a.visibleColumns, setVisibleColumns = _a.setVisibleColumns, isColumnVisible = _a.isColumnVisible;
     return (React.createElement("div", null,
-        React.createElement("button", { className: "table__settings-button" },
-            React.createElement("div", { className: "table__settings-menu" }, headers.map(function (header, index) { return (React.createElement("label", { key: index, style: { width: "100px" } },
+        React.createElement("button", { className: "rpt__settings-button" },
+            React.createElement("div", { className: "rpt__settings-menu" }, headers.map(function (header, index) { return (React.createElement("label", { key: index, style: { width: "100px" } },
                 React.createElement("input", { type: "checkbox", width: 20, height: 20, style: {
                         display: "inline-block",
                     }, checked: isColumnVisible(header), onChange: function (e) {

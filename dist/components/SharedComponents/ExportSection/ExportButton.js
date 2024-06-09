@@ -1,7 +1,7 @@
 import React from "react";
-import { exportAsCsv, exportAsJson } from "../../helper/mainHelpers";
-import { useTableProps } from "../../hooksAndContexts/TableContext";
-import { getVisibleData } from "../../helper/getManipulatedData";
+import { exportAsCsv, exportAsJson } from "../../../helper/mainHelpers";
+import { useTableProps } from "../../../hooksAndContexts/TableContext";
+import { getVisibleData } from "../../../helper/getManipulatedData";
 var ExportButton = function (_a) {
     var type = _a.type, fileName = _a.fileName;
     var _b = useTableProps(), dataList = _b.dataList, headers = _b.headers, exportOptions = _b.exportOptions, visibleColumns = _b.visibleColumns, onError = _b.onError;

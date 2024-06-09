@@ -5,7 +5,7 @@ import { useTableProps } from "../../hooksAndContexts/TableContext";
 const TableFooter = () => {
   const { paginationOptions } = useTableProps();
   return (
-    <div className="table__table-footer">
+    <div className="rpt__table-footer">
       {paginationOptions && <PaginationFooter />}
       {
         // <div

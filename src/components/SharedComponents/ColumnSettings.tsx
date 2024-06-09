@@ -7,8 +7,8 @@ const ColumnSettings = () => {
     useTableProps();
   return (
     <div>
-      <button className="table__settings-button">
-        <div className="table__settings-menu">
+      <button className="rpt__settings-button">
+        <div className="rpt__settings-menu">
           {headers.map((header, index) => (
             <label key={index} style={{ width: "100px" }}>
               <input

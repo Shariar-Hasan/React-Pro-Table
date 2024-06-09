@@ -12,11 +12,14 @@ type DatalistSingleItemType = {
 
 // header type setting
 type HeaderSingleItemType = {
+  filterable: React.JSX.Element;
   id: number | string;
   title: string;
   accessor: string;
   render: ColumnAccessorFunctionType;
   sortable?: boolean;
+  filtarable?: boolean;
+  filterType?: TableFilterTypes;
 };
 
 // Export related
@@ -27,13 +30,7 @@ type TableExportOptionsType = {
 };
 
 // table filter type settings
-type TableFilterTypes = "text" | "number" | "date";
-
-type TableFilterOptionsType = {
-  filterBy: string;
-  defaultValue?: string;
-  filterType: TableFilterTypes;
-};
+type TableFilterTypes = "string" | "number" | "date";
 
 // table pagination type settings
 type TablePaginationOptionsType = {
@@ -71,7 +68,11 @@ type OnRowClickEventType = (selectedRows: any[], rowIndex: number) => void;
 
 type OnTableExportingEventType = (rowId: number, rowItems: any) => void;
 
-type OnTableFilteringEventType = (type: TableFilterTypes, value: any) => void;
+type OnTableFilteringEventType = (
+  type: TableFilterTypes,
+  accessor: string,
+  value: string | number
+) => void;
 
 // main table props type setting
 interface ITableProps {
@@ -87,9 +88,9 @@ interface ITableProps {
   stickyFooter?: boolean;
   columnSettings?: boolean;
   exportOptions?: TableExportOptionsType[];
-  filterOptions?: TableFilterOptionsType[];
   paginationOptions?: TablePaginationOptionsType;
   responsive?: boolean;
+
   // events
   onSort?: OnSortClickEventType;
   onPaginationChange?: OnPaginationChangesEventType;
@@ -101,19 +102,8 @@ interface ITableProps {
   onFiltering?: OnTableFilteringEventType;
   onError?: (message: string) => void;
 }
-type TableContextProps = ITableProps & {
-  selectedRows: any[];
-  setSelectedRows: Dispatch<SetStateAction<any[]>>;
-  handleRowClick: (row: any, index: number) => void;
-  handleSelectAllRow: () => void;
-  isSelected: (row: any) => boolean;
-  isColumnVisible: (col: HeaderSingleItemType) => boolean;
-  visibleColumns: HeaderSingleItemType[];
-  setVisibleColumns: Dispatch<SetStateAction<HeaderSingleItemType[]>>;
-};
 
 export {
-  TableContextProps,
   ITableProps,
   ColumnAccessorFunctionType,
   SortDirection,
@@ -121,7 +111,6 @@ export {
   HeaderSingleItemType,
   TableExportOptionsType,
   TableFilterTypes,
-  TableFilterOptionsType,
   TablePaginationOptionsType,
   OnSortClickEventType,
   OnRowHoverEventType,

@@ -77,42 +77,42 @@ You can customize the table appearance by adding CSS classes. Here are some comm
 
 ```css
 /* Top section of the table */
-.table__top {
+.rpt__top {
   /* Your styles */
 }
 
 /* Table wrapper */
-.table__wrapper {
+.rpt__wrapper {
   /* Your styles */
 }
 
 /* Responsive table wrapper */
-.table__wrapper.table__responsive {
+.rpt__wrapper.rpt__responsive {
   /* Your styles */
 }
 
 /* Main table */
-.table__table {
+.rpt__table {
   /* Your styles */
 }
 
 /* Table row */
-.table__row {
+.rpt__row {
   /* Your styles */
 }
 
 /* Table header */
-.table__header {
+.rpt__header {
   /* Your styles */
 }
 
 /* Bordered table row */
-.table__row.bordered::after {
+.rpt__row.bordered::after {
   /* Your styles */
 }
 
 /* Table column */
-.table__column {
+.rpt__column {
   /* Your styles */
 }
 ```
