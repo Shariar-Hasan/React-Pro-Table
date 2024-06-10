@@ -4,7 +4,7 @@ import Checkbox from "../SharedComponents/Checkbox";
 import { BsSortAlphaDown, BsSortAlphaUp } from "react-icons/bs";
 import { LuFilter } from "react-icons/lu";
 var TableHeader = function () {
-    var _a = useTableProps(), headers = _a.headers, bordered = _a.bordered, stickyHeader = _a.stickyHeader, striped = _a.striped, selectable = _a.selectable, selectAll = _a.selectAll, visibleColumns = _a.visibleColumns, onSort = _a.onSort, isColumnVisible = _a.isColumnVisible;
+    var _a = useTableProps(), headers = _a.headers, bordered = _a.bordered, stickyHeader = _a.stickyHeader, striped = _a.striped, selectable = _a.selectable, selectAll = _a.selectAll, onSort = _a.onSort, isColumnVisible = _a.isColumnVisible;
     var _b = useState({
         order: "",
         orderBy: "",

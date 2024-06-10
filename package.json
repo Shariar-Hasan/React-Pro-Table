@@ -1,8 +1,8 @@
 {
   "name": "react-pro-table",
   "version": "1.0.1",
-  "main": "dist/Table.js",
-  "types": "dist/Table.d.ts",
+  "main": "dist/ProTable.js",
+  "types": "dist/ProTable.d.ts",
   "files": [
     "dist"
   ],

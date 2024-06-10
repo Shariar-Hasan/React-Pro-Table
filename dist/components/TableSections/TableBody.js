@@ -10,7 +10,7 @@ var TableBody = function () {
             selectable && (React.createElement("div", { className: "rpt__column" },
                 React.createElement(Checkbox, { item: item }))),
             headers.map(function (header, index) {
-                return isColumnVisible(header) && (React.createElement("div", { className: "rpt__column", key: index }, header.render(item)));
+                return isColumnVisible(header) && (React.createElement("div", { className: "rpt__column bordered", key: index }, header.render(item)));
             })));
     })));
 };

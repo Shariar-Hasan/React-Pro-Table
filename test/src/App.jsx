@@ -10,6 +10,7 @@ function App() {
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [sortProps, setSortProps] = useState({ order: '', orderBy: '' });
   const [filters, setFilters] = useState({ type: '', accessor: '', value: '' });
+  
   useEffect(() => {
     const newDataList = dataList
       .map((item) => ({ ...item, id: parseInt(item.id, 10) }))

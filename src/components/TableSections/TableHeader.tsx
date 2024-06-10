@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useTableProps } from "../../hooksAndContexts/TableContext";
 import Checkbox from "../SharedComponents/Checkbox";
-import { FaCaretDown, FaCaretUp } from "react-icons/fa6";
 import { BsSortAlphaDown, BsSortAlphaUp } from "react-icons/bs";
 import { LuFilter } from "react-icons/lu";
 const TableHeader = () => {
@@ -12,7 +11,6 @@ const TableHeader = () => {
     striped,
     selectable,
     selectAll,
-    visibleColumns,
     onSort,
     isColumnVisible,
   } = useTableProps();

@@ -10,3 +10,6 @@
   justify-content: space-between;
   flex-direction: row;
 }
+.rpt__column.bordered {
+  border-right: 1px solid #ddd;
+}

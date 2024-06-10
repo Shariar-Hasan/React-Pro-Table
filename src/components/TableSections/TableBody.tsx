@@ -40,7 +40,7 @@ const TableBody = () => {
             {headers.map(
               (header, index) =>
                 isColumnVisible(header) && (
-                  <div className="rpt__column" key={index}>
+                  <div className="rpt__column bordered" key={index}>
                     {header.render(item)}
                   </div>
                 )
