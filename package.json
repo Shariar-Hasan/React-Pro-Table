@@ -1,6 +1,7 @@
 {
   "name": "react-pro-table",
-  "version": "1.0.1",
+  "version": "1.0.0",
+  "description": "React-Pro-Table is a versatile and responsive table component for React applications. It offers advanced functionalities such as sorting, filtering (on test), pagination, and customizable styling options, making it ideal for displaying and manipulating large datasets.",
   "main": "dist/ProTable.js",
   "types": "dist/ProTable.d.ts",
   "files": [
@@ -9,6 +10,18 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shariar-Hasan/react-pro-table.git"
+  },
+  "author": {
+    "name": "Shariar Hasan",
+    "email": "shahriar.hasan.1523@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shariar-Hasan/react-pro-table/issues"
   },
   "dependencies": {
     "moment": "^2.30.1",
