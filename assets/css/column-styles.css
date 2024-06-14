@@ -2,6 +2,13 @@
 .rpt__column {
   display: table-cell;
   padding: 5px;
+  text-overflow: ellipsis;
+  line-clamp: 1;
+  word-break: normal;
+}
+.rpt_table_cell {
+  min-width: 100px;
+  width: max-content;
 }
 .rpt__column .sortable {
   cursor: pointer;
@@ -9,4 +16,11 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+}
+.rpt__column.bordered {
+  border-right: 1px solid var(--rpt__border-color);
+}
+
+.rpt_header-filter-button{
+  padding-left: 10px;
 }

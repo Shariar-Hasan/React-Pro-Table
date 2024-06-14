@@ -10,33 +10,44 @@ function App() {
   const [itemsPerPage, setItemsPerPage] = useState(5);
   const [sortProps, setSortProps] = useState({ order: '', orderBy: '' });
   const [filters, setFilters] = useState({ type: '', accessor: '', value: '' });
+
   useEffect(() => {
+
     const newDataList = dataList
-      .map((item) => ({ ...item, id: parseInt(item.id, 10) }))
+      // .map((item) => ({ ...item, id: parseInt(item.id, 10) }))
       .sort((a, b) => {
-        console.log({ sortProps, bby: b[sortProps.orderBy] - a[sortProps.orderBy], aby: a[sortProps.orderBy] - b[sortProps.orderBy] })
-        if (sortProps.order === "dec") {
-          if (a[sortProps.orderBy] > b[sortProps.orderBy]) return -1;
-          else return 1;
+        const aValue = a[sortProps.orderBy];
+        const bValue = b[sortProps.orderBy];
+        if (sortProps.order === "desc") {
+          if (typeof aValue === "number" && typeof bValue === "number") {
+            return bValue - aValue;
+          } else {
+            return String(bValue).localeCompare(String(aValue));
+          }
         } else if (sortProps.order === "asc") {
-          if (a[sortProps.orderBy] < b[sortProps.orderBy]) return 1;
-          else return -1;
+          if (typeof aValue === "number" && typeof bValue === "number") {
+            return aValue - bValue;
+          } else {
+            return String(aValue).localeCompare(String(bValue));
+          }
         }
-        return 0
+        return 0;
 
       })
       .slice((page - 1) * itemsPerPage, page * itemsPerPage)
-    console.log({ newDataList, filters })
     setDataListItems(newDataList)
   }, [page, itemsPerPage, sortProps, filters])
+
   return (
     <>
       <div className="App container">
-        <div className="">
+        <div className="" >
           <img src={logo} alt={"React Pro Table Logo"} style={{
             width: 200,
             height: 200,
-          }} />
+          }}
+
+          />
         </div>
         <header className="App-header">
           <h1>React Pro Table Example</h1>
@@ -49,17 +60,19 @@ function App() {
           headers={columns}
           bordered
           responsive
+          striped
           hoverable
           selectable
           uniqueKeyAccessor='id'
           selectAll
           columnSettings
+          tableHeight={500}
           paginationOptions={
             {
               itemsPerPageList: [5, 10, 15, 20, 30, 40],
               totalItems: dataList.length,
-              defaultCurrentPage: 2,
-              defaultItemsPerPage: 3,
+              defaultCurrentPage: 1,
+              defaultItemsPerPage: 5,
               showResultsCounts: true,
               showSkipToPageButton: true,
               showCompressedButtons: true,

@@ -28,8 +28,9 @@
   gap: 10px;
   padding: 7px;
   transition: all 0.3s ease-in-out;
-  z-index: 2;
+  z-index: 3;
   border-radius: 5px;
+  background-color: #FFFFFF;
 }
 .rpt__export-dropdown-wrapper:focus-within .rpt__export-buttons-wrapper {
   opacity: 1;
@@ -39,8 +40,18 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
+  width: 100%;
+  padding: 5px 7px;
 }
 .rpt__export-buttons-wrapper button:hover,
 .rpt__export-dropdown-button:hover {
   backdrop-filter: brightness(0.93);
+}
+
+.rpt__export-dropdown-button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--rpt__theme-color);
+  transition: all 0.3s ease-in-out;
+  color: aliceblue;
 }

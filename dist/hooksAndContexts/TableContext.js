@@ -48,23 +48,24 @@ var TableContextProvider = function (_a) {
     };
     // row click function
     var handleRowClick = function (row, index) {
-        onRowClick && onRowClick(row, index);
+        // console.log({ row, index });
         if (isSelected(row)) {
             // if row already selected or
-            var settingRowSelection = function (prev) {
+            setSelectedRows(function (prev) {
                 var newSelectedRows = prev.filter(function (r) {
                     return r[uniqueKeyAccessor] !== row[uniqueKeyAccessor];
                 });
                 onSingleRowSelect && onSingleRowSelect(index, row, newSelectedRows);
+                console.log({ ifselected: newSelectedRows, });
                 return newSelectedRows;
-            };
-            setSelectedRows(settingRowSelection);
+            });
         }
         else {
             // if row not selected
             var newSelectedRows = __spreadArray(__spreadArray([], selectedRows, true), [row], false);
             onSingleRowSelect && onSingleRowSelect(index, row, newSelectedRows);
             setSelectedRows(newSelectedRows);
+            console.log({ ifNotselected: newSelectedRows });
         }
     };
     // select all row function

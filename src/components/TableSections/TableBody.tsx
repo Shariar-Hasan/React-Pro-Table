@@ -15,6 +15,8 @@ const TableBody = () => {
     isSelected,
     isColumnVisible,
     visibleColumns,
+    onRowClick,
+    onCellClick,
   } = useTableProps();
 
   return (
@@ -22,30 +24,65 @@ const TableBody = () => {
       {dataList.map((item, index) => {
         return (
           <div
-            className={`rpt__row ${bordered ? "bordered" : ""} ${
-              selectable ? "selectable" : ""
-            } ${hoverable ? "hoverable" : ""} ${striped ? "striped" : ""} ${
-              isSelected(item) ? "selected" : ""
-            }`}
+            className={`rpt__row
+              ${bordered ? "bordered" : ""}
+              ${selectable ? "selectable" : ""}
+              ${hoverable ? "hoverable" : ""}
+              ${striped ? "striped" : ""}
+              ${isSelected(item) ? "selected" : ""}`}
             key={index}
             onClick={() => {
-              handleRowClick(item, index)
+              onRowClick && onRowClick(selectedRows, index);
             }}
           >
             {selectable && (
-              <div className="rpt__column">
-                <Checkbox item={item} />
+              <div className="rpt__column rpt_checkbox_column">
+                <Checkbox
+                  item={item}
+                  onClick={() => {
+                    handleRowClick(item, index);
+                  }}
+                />
               </div>
             )}
             {headers.map(
               (header, index) =>
                 isColumnVisible(header) && (
-                  <div className="rpt__column" key={index}>
+                  <div
+                    className="rpt__column rpt_table_cell bordered"
+                    key={index}
+                    onClick={() => {
+                      onCellClick &&
+                        onCellClick(header.accessor, header.title, item);
+                    }}
+                  >
                     {header.render(item)}
                   </div>
                 )
             )}
           </div>
+          /* <div className="w-100">
+            {dataList.map((item) => (
+              <div className="w-100">
+                {headers.map(
+                  (header, index) =>
+                    isColumnVisible(header) && (
+                      <div
+                        className="d-flex justify-content-between"
+                        key={index}
+                        onClick={() => {
+                          onCellClick &&
+                            onCellClick(header.accessor, header.title, item);
+                        }}
+                      >
+                        {header.title}
+                        {header.render(item)}
+                      </div>
+                    )
+                )}
+              </div>
+            ))}
+          </div> */
         );
       })}
     </>

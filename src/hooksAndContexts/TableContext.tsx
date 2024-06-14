@@ -7,6 +7,7 @@ import React, {
   useState,
 } from "react";
 import {
+  DatalistSingleItemType,
   HeaderSingleItemType,
   ITableProps,
 } from "../type/types";
@@ -63,25 +64,26 @@ const TableContextProvider = ({
   };
 
   // row click function
-  const handleRowClick = (row: any, index: number) => {
-    onRowClick && onRowClick(row, index);
+  const handleRowClick = (row: DatalistSingleItemType, index: number) => {
+    // console.log({ row, index });
     if (isSelected(row)) {
       // if row already selected or
-      const settingRowSelection = (prev: any[]) => {
+
+      setSelectedRows((prev: any[]) => {
         const newSelectedRows = prev.filter(
           (r) =>
             r[uniqueKeyAccessor as string] !== row[uniqueKeyAccessor as string]
         );
         onSingleRowSelect && onSingleRowSelect(index, row, newSelectedRows);
+        console.log({ ifselected: newSelectedRows,  });
         return newSelectedRows;
-      };
-
-      setSelectedRows(settingRowSelection);
+      });
     } else {
       // if row not selected
       const newSelectedRows = [...selectedRows, row];
       onSingleRowSelect && onSingleRowSelect(index, row, newSelectedRows);
       setSelectedRows(newSelectedRows);
+      console.log({ ifNotselected: newSelectedRows });
     }
   };
 
