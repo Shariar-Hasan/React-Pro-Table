@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, } from "react";
+import ContextMenu from "../components/SharedComponents/ContextMenu";
 var ContextMenuAndModal = createContext({});
 export var useMenu = function () { return useContext(ContextMenuAndModal); };
 var ContextMenuAndModalProvider = function (_a) {
@@ -10,6 +11,8 @@ var ContextMenuAndModalProvider = function (_a) {
             setIsContextMenuOpen: setIsContextMenuOpen,
             isModalOpen: isModalOpen,
             setIsModalOpen: setIsModalOpen,
-        } }, children));
+        } },
+        React.createElement(ContextMenu, null),
+        children));
 };
 export default ContextMenuAndModalProvider;

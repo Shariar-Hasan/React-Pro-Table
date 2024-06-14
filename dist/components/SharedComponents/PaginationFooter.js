@@ -98,12 +98,12 @@ var FullFunctionalPagination = function (_a) {
         }
     };
     if (showCompressedButtons) {
-        return compressedPaginations.map(function (item, index) { return (React.createElement("button", { key: index, className: "".concat(currentPage === item ? "selected" : ""), onClick: function () { return handleCompressedPagination(item, index); }, disabled: item !== "..." && currentPage === item }, item)); });
+        return compressedPaginations.map(function (item, index) { return (React.createElement("button", { key: index, className: "".concat(currentPage === item ? "selected" : "", " ").concat(item === "..." ? "rpt__pagination-btn" : ""), onClick: function () { return handleCompressedPagination(item, index); }, disabled: item !== "..." && currentPage === item }, item)); });
     }
     else {
         return Array.from({
             length: numOfPages,
-        }).map(function (_, index) { return (React.createElement("button", { key: index, className: "".concat(currentPage === index + 1 ? "selected" : ""), onClick: function () { return handlePageChange(index + 1); }, disabled: currentPage === index + 1 }, index + 1)); });
+        }).map(function (_, index) { return (React.createElement("button", { key: index, className: "".concat(currentPage === index + 1 ? "selected" : "", " rpt__pagination-btn"), onClick: function () { return handlePageChange(index + 1); }, disabled: currentPage === index + 1 }, index + 1)); });
     }
 };
 export default PaginationFooter;

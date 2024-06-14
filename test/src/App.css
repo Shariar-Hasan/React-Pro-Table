@@ -1,6 +1,10 @@
 .App {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+/* :root{
+  --rpt__text-color: rgb(0, 0, 0);
+  --rpt__background-color: rgb(255, 0, 157);
+} */
 html {
   background-color: rgb(227, 229, 228);
 }
@@ -12,29 +16,10 @@ html {
 
 /* Table style override */
 .rpt__body {
-  background-color: white;
   border-radius: 6px;
 }
 .rpt__column {
   padding: 10px 8px;
 }
 
-.rpt__export-dropdown-button {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: purple;
-  transition: all 0.3s ease-in-out;
-  color: aliceblue;
-}
-.rpt__export-dropdown-button {
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: purple;
-  transition: all 0.3s ease-in-out;
-  color: aliceblue;
-}
 
-.rpt__export-buttons-wrapper {
-  background-color: white;
-  border: 1px solid #ccc;
-}

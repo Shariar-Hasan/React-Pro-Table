@@ -25,6 +25,8 @@ export const columns = [
     title: "Email",
     render: (row) => row.email,
     accessor: "email",
+    sortable: true,
+    filterable: true,
   },
   {
     id: 5,

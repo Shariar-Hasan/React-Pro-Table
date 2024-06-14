@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useTableProps } from "../../hooksAndContexts/TableContext";
+import { DatalistSingleItemType } from "../../type/types";
 
-const Checkbox = ({ item, checkAll }: { item?: any; checkAll?: boolean }) => {
+const Checkbox = ({
+  item,
+  checkAll,
+  onClick,
+}: {
+  item?: any;
+  checkAll?: boolean;
+  onClick?: () => void;
+}) => {
   const { dataList, selectedRows, handleSelectAllRow, uniqueKeyAccessor } =
     useTableProps();
   const [isChecked, setIsChecked] = useState<boolean>();
@@ -18,23 +27,9 @@ const Checkbox = ({ item, checkAll }: { item?: any; checkAll?: boolean }) => {
     <span
       className={`rpt__checkbox ${isChecked ? "checked" : ""}`}
       onClick={() => {
-        console.log({ checkAll });
-        checkAll
-          ? handleSelectAllRow()
-          : () => {
-              return;
-            };
+        checkAll ? handleSelectAllRow() : onClick && onClick();
       }}
     ></span>
-    // <input
-    //   type="checkbox"
-    //   style={{
-    //     width: "15px",
-    //     height: "15px",
-    //   }}
-    //   readOnly
-    //   checked={selectedRows?.includes(item)}
-    // />
   );
 };
 

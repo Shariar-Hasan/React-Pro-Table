@@ -211,7 +211,6 @@ const FullFunctionalPagination = ({
     setCompressedPaginations(getCompressedPagination(numOfPages, currentPage));
   }, [currentPage, numOfPages]);
 
-
   const handleCompressedPagination = (item: string | number, index: number) => {
     if (item !== "...") {
       handlePageChange(item as number);
@@ -231,7 +230,9 @@ const FullFunctionalPagination = ({
     return compressedPaginations.map((item, index) => (
       <button
         key={index}
-        className={`${currentPage === item ? "selected" : ""}`}
+        className={`${currentPage === item ? "selected" : ""} ${
+          item === "..." ? "rpt__pagination-btn" : ""
+        }`}
         onClick={() => handleCompressedPagination(item, index)}
         disabled={item !== "..." && currentPage === item}
       >
@@ -244,7 +245,9 @@ const FullFunctionalPagination = ({
     }).map((_, index) => (
       <button
         key={index}
-        className={`${currentPage === index + 1 ? "selected" : ""}`}
+        className={`${
+          currentPage === index + 1 ? "selected" : ""
+        } rpt__pagination-btn`}
         onClick={() => handlePageChange(index + 1)}
         disabled={currentPage === index + 1}
       >

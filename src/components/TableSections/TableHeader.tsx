@@ -12,6 +12,7 @@ const TableHeader = () => {
     selectable,
     selectAll,
     onSort,
+    hideHeader,
     isColumnVisible,
   } = useTableProps();
   const [sortProps, setSortProps] = useState({
@@ -29,9 +30,12 @@ const TableHeader = () => {
   };
   return (
     <div
-      className={`rpt__header rpt__row ${bordered ? "bordered" : ""} ${
-        stickyHeader ? "sticky" : ""
-      } ${striped ? "striped" : ""}`}
+      className={`rpt__header rpt__row  
+        ${bordered ? "bordered" : ""} 
+        ${stickyHeader ? "sticky" : ""} 
+        ${striped ? "striped" : ""}
+        ${hideHeader ? "hidden" : ""}
+        `}
     >
       {selectable && (
         <div className="rpt__column">{selectAll && <Checkbox checkAll />}</div>
@@ -47,7 +51,7 @@ const TableHeader = () => {
                     onClick={() => handleSort(header.accessor)}
                   >
                     <span>{header.title}</span>
-                    <span className="flex-center">
+                    <span className="flex-center pl-1">
                       {sortProps.orderBy === header.accessor &&
                         (sortProps.order === "asc" ? (
                           <BsSortAlphaUp />
@@ -61,7 +65,7 @@ const TableHeader = () => {
                 )}
                 {header.filterable && (
                   <span
-                    className="flex-center cursor-pointer"
+                    className="flex-center cursor-pointer rpt_header-filter-button"
                     onClick={() => {}}
                   >
                     <LuFilter />

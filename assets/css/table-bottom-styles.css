@@ -25,7 +25,7 @@
   display: inline-block;
 }
 .rpt__pagination-itemPerPage-wrapper > .rpt__pagination-itemPerPage-btn {
-  border: 1px solid #ddd;
+  border: 1px solid var(--rpt__border-color);
 }
 .rpt__pagination-itemPerPage-btn {
   padding: 5px 20px;
@@ -35,7 +35,7 @@
 }
 .rpt__pagination-itemPerPage-btn:hover,
 .rpt__pagination-itemPerPage-list button:hover {
-  background-color: #ddd;
+  background-color: var(--rpt__border-color);
 }
 .rpt__pagination-itemPerPage-list {
   position: absolute;
@@ -43,7 +43,7 @@
   left: 0;
   width: 60px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid var(--rpt__border-color);
   border-radius: 5px;
   padding: 5px;
   visibility: hidden;
@@ -68,7 +68,7 @@
   width: 100%;
 }
 .rpt__pagination-itemPerPage-list button:disabled {
-  background-color: #ddd;
+  background-color: var(--rpt__border-color);
   backdrop-filter: brightness(0.9);
   cursor: not-allowed;
 }
@@ -88,7 +88,7 @@
   font-size: 16px;
 }
 .rpt__pagination-footer-middle button.selected {
-  background-color: #ddd;
+  background-color: var(--rpt__border-color);
   cursor: not-allowed;
   border-radius: 5px;
 }

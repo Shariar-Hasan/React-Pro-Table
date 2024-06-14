@@ -1,13 +1,18 @@
 import React from "react";
+import { useTableProps } from "../../hooksAndContexts/TableContext";
 
 const TableBodyFooter = () => {
-  return <div className="rpt__row">
-    <div className="rpt__column">$</div>
-    <div className="rpt__column">$</div>
-    <div className="rpt__column">$</div>
-    <div className="rpt__column">$</div>
-    <div className="rpt__column">$</div>
-  </div>;
+  const { headers, selectable, enableBodyFooter } = useTableProps();
+  return (
+    enableBodyFooter && (
+      <div className="rpt__row rpt__body-footer-sticky">
+        {selectable && <div className="rpt__column"></div>}
+        {headers.map((item, index) => (
+          <div key={index} className="rpt__column"></div>
+        ))}
+      </div>
+    )
+  );
 };
 
 export default TableBodyFooter;

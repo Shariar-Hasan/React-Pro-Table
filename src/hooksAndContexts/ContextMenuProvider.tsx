@@ -5,6 +5,7 @@ import React, {
   useContext,
   useState,
 } from "react";
+import ContextMenu from "../components/SharedComponents/ContextMenu";
 interface ContextMenuAndModalType {
   isContextMenuOpen?: boolean;
   isModalOpen?: boolean;
@@ -30,7 +31,7 @@ const ContextMenuAndModalProvider = ({
       }}
     >
       {/* Modal Component */}
-      {/* Menu Component */}
+      <ContextMenu />
       {children}
     </ContextMenuAndModal.Provider>
   );

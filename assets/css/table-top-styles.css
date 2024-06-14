@@ -31,12 +31,12 @@
   border-radius: 5px;
   visibility: hidden;
   opacity: 0;
-  border: 1px solid #ddd;
+  border: 1px solid var(--rpt__border-color);
   transform: translateY(-30px);
   max-width: max-content;
   width: fit-content;
   padding: 10px;
-  z-index: 2;
+  z-index: 3;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;

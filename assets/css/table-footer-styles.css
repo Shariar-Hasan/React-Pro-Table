@@ -1,0 +1,8 @@
+.rpt__row.rpt__body-footer-sticky{
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--rpt__header-background-color);
+    border-top: 1px solid var(--rpt__border-color);
+}

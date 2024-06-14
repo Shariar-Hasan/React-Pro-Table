@@ -35,7 +35,8 @@ type OnPaginationChangesEventType = (currentPage: number, currentItemsPerPage: n
 type OnRowHoverEventType = (rowId: number, rowItems: any) => void;
 type OnSingleRowSelectEventType = (rowIndex: number, row: any, selectedRows: any[]) => void;
 type OnRowSelectEventType = (selectedRows: any[]) => void;
-type OnRowClickEventType = (selectedRows: any[], rowIndex: number) => void;
+type OnRowClickEventType = (selectedRows: DatalistSingleItemType[], rowIndex: number) => void;
+type OnCellClickEventType = (accessor: string, header: string, value: any) => void;
 type OnTableExportingEventType = (rowId: number, rowItems: any) => void;
 type OnTableFilteringEventType = (type: TableFilterTypes, accessor: string, value: string | number) => void;
 interface ITableProps {
@@ -48,16 +49,20 @@ interface ITableProps {
     selectable?: boolean;
     selectAll?: boolean;
     stickyHeader?: boolean;
+    hideHeader?: boolean;
     stickyFooter?: boolean;
     columnSettings?: boolean;
     exportOptions?: TableExportOptionsType[];
     paginationOptions?: TablePaginationOptionsType;
     responsive?: boolean;
+    enableBodyFooter?: boolean;
+    tableHeight?: number;
     onSort?: OnSortClickEventType;
     onPaginationChange?: OnPaginationChangesEventType;
     onRowHover?: OnRowHoverEventType;
     onRowSelect?: OnRowSelectEventType;
     onRowClick?: OnRowClickEventType;
+    onCellClick?: OnCellClickEventType;
     onSingleRowSelect?: OnSingleRowSelectEventType;
     onRowExporting?: OnTableExportingEventType;
     onFiltering?: OnTableFilteringEventType;

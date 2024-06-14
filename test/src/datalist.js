@@ -1,6 +1,6 @@
 export const dataList = [
   {
-    id: "1",
+    id: 1,
     firstName: "John",
     lastName: "Doe",
     email: "john.doe@example.com",
@@ -12,7 +12,7 @@ export const dataList = [
     zipCode: "12345",
   },
   {
-    id: "2",
+    id: 2,
     firstName: "Jane",
     lastName: "Smith",
     email: "jane.smith@example.com",
@@ -24,7 +24,7 @@ export const dataList = [
     zipCode: "67890",
   },
   {
-    id: "3",
+    id: 3,
     firstName: "Emily",
     lastName: "Johnson",
     email: "emily.johnson@example.com",
@@ -36,7 +36,7 @@ export const dataList = [
     zipCode: "11223",
   },
   {
-    id: "4",
+    id: 4,
     firstName: "Michael",
     lastName: "Brown",
     email: "michael.brown@example.com",
@@ -48,7 +48,7 @@ export const dataList = [
     zipCode: "44556",
   },
   {
-    id: "5",
+    id: 5,
     firstName: "Jessica",
     lastName: "Williams",
     email: "jessica.williams@example.com",
@@ -60,7 +60,7 @@ export const dataList = [
     zipCode: "77889",
   },
   {
-    id: "6",
+    id: 6,
     firstName: "Daniel",
     lastName: "Jones",
     email: "daniel.jones@example.com",
@@ -72,7 +72,7 @@ export const dataList = [
     zipCode: "99000",
   },
   {
-    id: "7",
+    id: 7,
     firstName: "Laura",
     lastName: "Garcia",
     email: "laura.garcia@example.com",
@@ -84,7 +84,7 @@ export const dataList = [
     zipCode: "22112",
   },
   {
-    id: "8",
+    id: 8,
     firstName: "James",
     lastName: "Martinez",
     email: "james.martinez@example.com",
@@ -96,7 +96,7 @@ export const dataList = [
     zipCode: "33445",
   },
   {
-    id: "9",
+    id: 9,
     firstName: "Sarah",
     lastName: "Rodriguez",
     email: "sarah.rodriguez@example.com",
@@ -108,7 +108,7 @@ export const dataList = [
     zipCode: "55667",
   },
   {
-    id: "10",
+    id: 10,
     firstName: "David",
     lastName: "Lee",
     email: "david.lee@example.com",
@@ -120,7 +120,7 @@ export const dataList = [
     zipCode: "77890",
   },
   {
-    id: "11",
+    id: 11,
     firstName: "Emma",
     lastName: "Perez",
     email: "emma.perez@example.com",
@@ -132,7 +132,7 @@ export const dataList = [
     zipCode: "88901",
   },
   {
-    id: "12",
+    id: 12,
     firstName: "Alexander",
     lastName: "Thompson",
     email: "alexander.thompson@example.com",
@@ -144,7 +144,7 @@ export const dataList = [
     zipCode: "99012",
   },
   {
-    id: "13",
+    id: 13,
     firstName: "Olivia",
     lastName: "White",
     email: "olivia.white@example.com",
@@ -156,7 +156,7 @@ export const dataList = [
     zipCode: "11234",
   },
   {
-    id: "14",
+    id: 14,
     firstName: "Liam",
     lastName: "Harris",
     email: "liam.harris@example.com",
@@ -168,7 +168,7 @@ export const dataList = [
     zipCode: "22345",
   },
   {
-    id: "15",
+    id: 15,
     firstName: "Sophia",
     lastName: "Clark",
     email: "sophia.clark@example.com",
@@ -180,7 +180,7 @@ export const dataList = [
     zipCode: "33456",
   },
   {
-    id: "16",
+    id: 16,
     firstName: "Mason",
     lastName: "Lewis",
     email: "mason.lewis@example.com",
@@ -192,7 +192,7 @@ export const dataList = [
     zipCode: "44567",
   },
   {
-    id: "17",
+    id: 17,
     firstName: "Ava",
     lastName: "Walker",
     email: "ava.walker@example.com",
@@ -204,7 +204,7 @@ export const dataList = [
     zipCode: "55678",
   },
   {
-    id: "18",
+    id: 18,
     firstName: "Ethan",
     lastName: "Young",
     email: "ethan.young@example.com",
@@ -216,7 +216,7 @@ export const dataList = [
     zipCode: "66789",
   },
   {
-    id: "19",
+    id: 19,
     firstName: "Isabella",
     lastName: "Hall",
     email: "isabella.hall@example.com",
@@ -228,7 +228,7 @@ export const dataList = [
     zipCode: "77890",
   },
   {
-    id: "20",
+    id: 20,
     firstName: "Logan",
     lastName: "Allen",
     email: "logan.allen@example.com",
@@ -240,7 +240,7 @@ export const dataList = [
     zipCode: "88901",
   },
   {
-    id: "21",
+    id: 21,
     firstName: "Mia",
     lastName: "Scott",
     email: "mia.scott@example.com",
@@ -252,7 +252,7 @@ export const dataList = [
     zipCode: "99012",
   },
   {
-    id: "22",
+    id: 22,
     firstName: "Lucas",
     lastName: "Green",
     email: "lucas.green@example.com",
@@ -264,7 +264,7 @@ export const dataList = [
     zipCode: "11234",
   },
   {
-    id: "23",
+    id: 23,
     firstName: "Amelia",
     lastName: "Baker",
     email: "amelia.baker@example.com",
@@ -276,7 +276,7 @@ export const dataList = [
     zipCode: "22345",
   },
   {
-    id: "24",
+    id: 24,
     firstName: "Oliver",
     lastName: "Adams",
     email: "oliver.adams@example.com",
@@ -288,7 +288,7 @@ export const dataList = [
     zipCode: "33456",
   },
   {
-    id: "25",
+    id: 25,
     firstName: "Charlotte",
     lastName: "Nelson",
     email: "charlotte.nelson@ex.com",
@@ -300,7 +300,7 @@ export const dataList = [
     zipCode: "44567",
   },
   {
-    id: "26",
+    id: 26,
     firstName: "Evelyn",
     lastName: "Turner",
     email: "evelyn.turner@example.com",
@@ -312,7 +312,7 @@ export const dataList = [
     zipCode: "55678",
   },
   {
-    id: "27",
+    id: 27,
     firstName: "Harper",
     lastName: "Campbell",
     email: "harper.campbell@example.com",
@@ -324,7 +324,7 @@ export const dataList = [
     zipCode: "66789",
   },
   {
-    id: "28",
+    id: 28,
     firstName: "Jack",
     lastName: "Mitchell",
     email: "jack.mitchell@example.com",
@@ -336,7 +336,7 @@ export const dataList = [
     zipCode: "77890",
   },
   {
-    id: "29",
+    id: 29,
     firstName: "Avery",
     lastName: "Roberts",
     email: "avery.roberts@example.com",
@@ -348,7 +348,7 @@ export const dataList = [
     zipCode: "88901",
   },
   {
-    id: "30",
+    id: 30,
     firstName: "Ella",
     lastName: "Phillips",
     email: "ella.phillips@example.com",
@@ -360,7 +360,7 @@ export const dataList = [
     zipCode: "99012",
   },
   {
-    id: "31",
+    id: 31,
     firstName: "Jackson",
     lastName: "Evans",
     email: "jackson.evans@example.com",
@@ -372,7 +372,7 @@ export const dataList = [
     zipCode: "11234",
   },
   {
-    id: "32",
+    id: 32,
     firstName: "Mila",
     lastName: "Collins",
     email: "mila.collins@example.com",
@@ -384,7 +384,7 @@ export const dataList = [
     zipCode: "22345",
   },
   {
-    id: "33",
+    id: 33,
     firstName: "Henry",
     lastName: "Stewart",
     email: "henry.stewart@example.com",
@@ -396,7 +396,7 @@ export const dataList = [
     zipCode: "33456",
   },
   {
-    id: "34",
+    id: 34,
     firstName: "Luna",
     lastName: "Sanchez",
     email: "luna.sanchez@example.com",
@@ -408,7 +408,7 @@ export const dataList = [
     zipCode: "44567",
   },
   {
-    id: "35",
+    id: 35,
     firstName: "Sebastian",
     lastName: "Morris",
     email: "sebastian.morris@example.com",
@@ -420,7 +420,7 @@ export const dataList = [
     zipCode: "55678",
   },
   {
-    id: "36",
+    id: 36,
     firstName: "Zoe",
     lastName: "Rogers",
     email: "zoe.rogers@example.com",
@@ -432,7 +432,7 @@ export const dataList = [
     zipCode: "66789",
   },
   {
-    id: "37",
+    id: 37,
     firstName: "Levi",
     lastName: "Reed",
     email: "levi.reed@example.com",
@@ -444,7 +444,7 @@ export const dataList = [
     zipCode: "77890",
   },
   {
-    id: "38",
+    id: 38,
     firstName: "Victoria",
     lastName: "Cook",
     email: "victoria.cook@example.com",
@@ -456,7 +456,7 @@ export const dataList = [
     zipCode: "88901",
   },
   {
-    id: "39",
+    id: 39,
     firstName: "Grace",
     lastName: "Morgan",
     email: "grace.morgan@example.com",
@@ -468,7 +468,7 @@ export const dataList = [
     zipCode: "99012",
   },
   {
-    id: "40",
+    id: 40,
     firstName: "David",
     lastName: "Bell",
     email: "david.bell@example.com",
@@ -480,7 +480,7 @@ export const dataList = [
     zipCode: "11234",
   },
   {
-    id: "41",
+    id: 41,
     firstName: "Layla",
     lastName: "Murphy",
     email: "layla.murphy@example.com",
@@ -492,7 +492,7 @@ export const dataList = [
     zipCode: "22345",
   },
   {
-    id: "42",
+    id: 42,
     firstName: "Aiden",
     lastName: "Bailey",
     email: "aiden.bailey@example.com",
@@ -504,7 +504,7 @@ export const dataList = [
     zipCode: "33456",
   },
   {
-    id: "43",
+    id: 43,
     firstName: "Riley",
     lastName: "Rivera",
     email: "riley.rivera@example.com",
@@ -516,7 +516,7 @@ export const dataList = [
     zipCode: "44567",
   },
   {
-    id: "44",
+    id: 44,
     firstName: "Chloe",
     lastName: "Cooper",
     email: "chloe.cooper@example.com",
@@ -528,7 +528,7 @@ export const dataList = [
     zipCode: "55678",
   },
   {
-    id: "45",
+    id: 45,
     firstName: "Gabriel",
     lastName: "Richardson",
     email: "gabriel.richardson@example.com",
@@ -540,7 +540,7 @@ export const dataList = [
     zipCode: "66789",
   },
   {
-    id: "46",
+    id: 46,
     firstName: "Hannah",
     lastName: "Cox",
     email: "hannah.cox@example.com",
@@ -552,7 +552,7 @@ export const dataList = [
     zipCode: "77890",
   },
   {
-    id: "47",
+    id: 47,
     firstName: "Isaac",
     lastName: "Howard",
     email: "isaac.howard@example.com",
@@ -564,7 +564,7 @@ export const dataList = [
     zipCode: "88901",
   },
   {
-    id: "48",
+    id: 48,
     firstName: "Aria",
     lastName: "Ward",
     email: "aria.ward@example.com",
@@ -574,5 +574,29 @@ export const dataList = [
     state: "DC",
     country: "USA",
     zipCode: "99012",
+  },
+  {
+    id: 51,
+    firstName: "Jessica",
+    lastName: "Williams",
+    email: "jessica.williams@example.com",
+    phone: "567-890-1234",
+    address: "202 Birch Street",
+    city: "Someplace",
+    state: "IL",
+    country: "USA",
+    zipCode: "77889",
+  },
+  {
+    id: 52,
+    firstName: "Daniel",
+    lastName: "Jones",
+    email: "daniel.jones@example.com",
+    phone: "678-901-2345",
+    address: "303 Cedar Street",
+    city: "Anyplace",
+    state: "PA",
+    country: "USA",
+    zipCode: "99000",
   },
 ];
