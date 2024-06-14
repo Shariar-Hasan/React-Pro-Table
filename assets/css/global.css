@@ -1,0 +1,103 @@
+@import "./some-common-classes.css";
+@import "./context-menu-styles.css";
+@import "./row-styles.css";
+@import "./column-styles.css";
+@import "./export-styles.css";
+@import "./table-top-styles.css";
+@import "./table-bottom-styles.css";
+@import "./table-footer-styles.css";
+
+/* .rpt__body * {
+  box-sizing: border-box;
+} */
+:root {
+  --rpt__text-color: rgb(0, 0, 0);
+  --rpt__background-color: white;
+  --rpt__border-color: #ddd;
+  --rpt__theme-color: #004aad;
+  --rpt__theme-color-hover: #3c73bb;
+  --rpt__header-background-color: white;
+}
+/* Table Wrapper */
+.rpt__body {
+  width: 100%;
+  background-color: var(--rpt__background-color);
+  color: var(--rpt__text-color);
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rpt__wrapper {
+  width: 100%;
+}
+.rpt__wrapper.rpt__responsive {
+  max-width: 100vw;
+  overflow-x: auto;
+  scrollbar-width: thin; /* Makes the scrollbar thin for Firefox */
+  scrollbar-color: #888 var(--rpt__theme-color); /* thumb color and track color for Firefox */
+}
+
+.rpt__wrapper::-webkit-scrollbar {
+  height: 8px; /* Change this value to make the scrollbar thinner or thicker */
+  background-color: #f1f1f1;
+  width: 8px; /* Background color of the scrollbar track */
+}
+
+.rpt__wrapper::-webkit-scrollbar-thumb {
+  border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+
+.table__wrpper.table__responsive::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table__wrpper.table__responsive::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+}
+
+
+.rpt__table {
+  display: table;
+  width: 100%;
+  /* height: 100%; */
+  border: 1px solid var(--rpt__border-color);
+}
+
+/* Table checkbox section */
+.rpt__checkbox {
+  cursor: pointer;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #747474;
+  z-index: 1;
+}
+.rpt__checkbox.checked {
+  border: 1px solid transparent;
+  transform: rotate(405deg);
+}
+
+.rpt__checkbox::before,
+.rpt__checkbox::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: #747474;
+  transition: all 0.3s ease-in-out;
+}
+.rpt__checkbox.checked::before {
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+}
+.rpt__checkbox.checked::after {
+  top: 0;
+  height: 100%;
+  width: 2px;
+}

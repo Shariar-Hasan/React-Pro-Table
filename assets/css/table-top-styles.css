@@ -1,0 +1,57 @@
+.rpt__top,
+.rpt__top-right,
+.rpt__top-left,
+.rpt__top-middle {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.rpt__top{
+  padding: 5px 10px;
+}
+.rpt__settings-button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
+}
+.rpt__settings-menu {
+  position: absolute;
+  font-size: small;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  border: 1px solid var(--rpt__border-color);
+  transform: translateY(-30px);
+  max-width: max-content;
+  width: fit-content;
+  padding: 10px;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.rpt__settings-menu label {
+ display: block;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 5px;
+ cursor: pointer;
+}
+.rpt__settings-button:focus-within .rpt__settings-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

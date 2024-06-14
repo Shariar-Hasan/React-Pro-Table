@@ -1,0 +1,55 @@
+/* <div>
+      <div className="modal__container">
+        <div className="modal__content">
+          <div className="modal__header">
+            <div className="modal__title">Modal Title</div>
+            <div className="modal__close" onClick={handleClose}>
+              X
+            </div>
+          </div>
+          <div className="modal__body">{children}</div>
+        </div>
+      </div>
+      {isOpen && <div className="modal__overlay" onClick={handleClose}></div>}
+    </div> */
+/* css based on above modal */
+.modal__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__content {
+  background-color: white;
+  border-radius: 6px;
+  padding: 20px;
+  width: 80%;
+}
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal__title {
+  font-size: 20px;
+}
+.modal__close {
+  cursor: pointer;
+  font-size: 20px;
+}
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
