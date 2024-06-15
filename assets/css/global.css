@@ -36,7 +36,6 @@
   max-width: 100vw;
   overflow-x: auto;
   scrollbar-width: thin; /* Makes the scrollbar thin for Firefox */
-  scrollbar-color: #888 var(--rpt__theme-color); /* thumb color and track color for Firefox */
 }
 
 .rpt__wrapper::-webkit-scrollbar {
